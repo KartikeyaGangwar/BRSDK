@@ -1,12 +1,15 @@
 cff-version: 1.2.0
 message: "If you use BRSDK in your research, please cite it as below."
 authors:
-- name: "BRSDK Team"
+  - family-names: "Singh"
+    given-names: "Kartikey"
+    orcid: "https://orcid.org/0009-0009-1973-7532"
+  - name: "BRSDK Contributors"
 title: "BeamNG Research SDK (BRSDK)"
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-08-01
-url: "https://github.com/beamng-research/brsdk"
-repository-code: "https://github.com/beamng-research/brsdk"
+url: "https://github.com/KartikeyaGangwar/BRSDK"
+repository-code: "https://github.com/KartikeyaGangwar/BRSDK"
 doi: "10.5281/zenodo.0000000"
 license: Apache-2.0
 abstract: >-
@@ -23,6 +26,9 @@ preferred-citation:
   type: software
   title: "BeamNG Research SDK (BRSDK)"
   authors:
-  - name: "BRSDK Team"
+    - family-names: "Singh"
+      given-names: "Kartikey"
+      orcid: "https://orcid.org/0009-0009-1973-7532"
+    - name: "BRSDK Contributors"
   year: 2026
-  url: "https://github.com/beamng-research/brsdk"
+  url: "https://github.com/KartikeyaGangwar/BRSDK"

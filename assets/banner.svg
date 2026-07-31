@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1600 500"
+   width="100%"
+   height="100%"
+   style="background-color: transparent; font-family: 'Inter', 'Segoe UI', sans-serif;"
+   version="1.1"
+   id="svg48"
+   sodipodi:docname="banner.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs48" />
+  <sodipodi:namedview
+     id="namedview48"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.1342508"
+     inkscape:cx="331.81773"
+     inkscape:cy="125.8674"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg48" />
+  <!-- Left Section (Logo and Title) -->
+  <g
+     transform="matrix(0.30909344,0,0,0.34755029,25.220092,-48.215493)"
+     id="g6">
+    <path
+       fill="#651fff"
+       d="m 1047,293.44 c 27.66,-0.842 56.01,1.167 83.65,0.275 28.61,-0.922 54.52,3.475 76.44,23.347 17.64,16.027 28.08,38.483 28.97,62.301 1.32,28.572 -7.5,50.838 -26.48,71.649 -30.75,29.482 -60.94,26.885 -100.89,26.867 l -61.7,-0.062 z m 44.19,142.96 30.02,0.188 c 20.78,0.092 39.96,0.405 56.18,-15.115 10.79,-11.452 15.64,-22.605 15.12,-38.148 -1.4,-41.603 -37.3,-51.013 -72.05,-48.801 -9.23,0.588 -19.77,-0.498 -29.25,0.413 -0.19,33.753 0.35,67.799 -0.02,101.463 z"
+       id="path1" />
+    <path
+       fill="#651fff"
+       d="m 506.331,293.519 c 31.001,-1.754 65.241,1.618 96.642,-0.196 7.206,-0.417 17.98,-0.288 25.051,0.898 42.642,7.152 63.606,59.741 24.002,87.429 28.044,14.655 35.335,40.232 21.588,68.289 -18.957,32.76 -61.47,27.909 -93.814,27.897 l -73.365,-0.144 z M 633.26,432.914 c 10.36,-11.591 3.793,-28.456 -12.901,-28.163 -8.662,0.151 -18.414,-0.397 -27.229,-0.401 l -44.773,0.025 c 0.002,10.37 0.349,23.389 -0.22,33.546 l 42.801,0.162 c 12.836,0.034 31.174,1.402 42.322,-5.169 z m -85.031,-65.167 42.373,0.124 c 10.574,0.023 25.758,1.371 34.938,-3.877 11.707,-10.982 7.222,-30.156 -10.421,-31.124 -21.453,-1.178 -42.752,0.156 -64.246,-0.312 l -1.905,0.479 c -1.531,3.507 -0.807,28.882 -0.739,34.71 z"
+       id="path2" />
+    <path
+       fill="#651fff"
+       d="m 686.775,293.53 c 16.456,-1.033 39.604,0.518 56.813,0.24 19.31,0.47 39.114,-1.119 58.335,0.353 66.7,5.108 79.183,102.197 15.51,124.357 16.37,19.836 34.579,39.526 50.518,59.365 l -16.777,0.014 -38.217,-0.128 c -12.813,-16.138 -27.949,-38.238 -40.978,-55.515 -13.089,-0.432 -28.939,-0.229 -42.035,0.002 -0.067,18.501 0.082,37.001 0.449,55.498 -14.292,0.329 -29.453,0.1 -43.813,0.125 l -0.082,-135.845 c -0.026,-8.586 -1.128,-43.134 0.277,-48.466 z m 43.392,40.1 c -0.049,16.596 0.283,33.515 0.066,50.047 11.676,0.484 24.243,0.31 35.971,0.265 6.008,-0.023 17.281,0.252 22.987,-0.287 8.715,-0.764 16.422,-2.293 22.176,-9.463 12.883,-16.051 3.575,-37.578 -16.645,-40.18 -13.243,-1.704 -26.335,-0.638 -39.463,-0.639 z"
+       id="path3" />
+    <path
+       fill="#651fff"
+       d="m 940.052,289.074 c 35.899,-2.471 78.188,8.539 90.178,46.919 1.59,5.078 2.04,10.351 2.61,15.624 -14.41,0.165 -28.83,0.19 -43.24,0.076 -1.035,-4.2 -2.894,-10.093 -6.228,-13.26 -9.898,-14.261 -63.353,-13.239 -72.752,-0.832 -19.204,25.35 27.37,28.125 41.21,26.319 6.759,-0.882 21.534,0.533 24.529,0.687 33.831,1.709 64.641,18.314 64.051,56.077 -0.77,49.45 -48.968,61.264 -89.222,60.974 -30.246,-0.384 -62.93,-7.38 -81.034,-34.029 -6.747,-9.933 -8.834,-19.869 -10.541,-31.509 12.38,-0.787 31.281,-0.088 44.078,0.135 8.687,25.439 31.79,25.807 54.741,25.535 7.748,0.501 31.251,-2.933 35.516,-10.636 17.062,-30.806 -27.98,-30.412 -44.665,-30.095 -12.564,0.239 -18.887,-0.618 -26.999,-1.147 -28.1,-1.834 -56.744,-14.41 -59.088,-45.839 -1.144,-14.155 3.434,-28.177 12.711,-38.929 16.015,-18.417 40.823,-24.506 64.145,-26.07 z"
+       id="path4" />
+    <path
+       fill="#651fff"
+       d="m 1242.01,293.428 c 12.61,-0.717 31.11,-0.115 44.17,-0.105 -0.22,25.907 -0.23,51.816 -0.04,77.723 17.46,-17.282 34.74,-34.751 51.82,-52.403 7.77,-7.879 17,-17.725 25.14,-25 13.34,-1.106 41.08,-0.251 55.41,-0.187 -30.97,29.741 -60.63,61.724 -91.87,91.515 l 49.01,48.154 c 14.68,14.56 32.23,29.964 46.06,44.625 -17.42,0.659 -39.32,0.27 -56.95,0.059 -26.45,-24.307 -52.84,-53.075 -78.57,-78.313 -0.32,25.868 0.01,52.312 0.07,78.222 -14.42,0.283 -29.56,0.058 -44.04,0.066 z"
+       id="path5" />
+    <path
+       fill="#00e5ff"
+       fill-opacity="0.98"
+       d="m 236.871,288.072 c 6.047,-0.437 13.962,-0.265 20.151,-0.298 3.668,13.225 9.74,29.845 14.212,42.996 7.577,22.534 15.319,45.013 23.224,67.434 2.221,6.213 4.492,12.312 6.347,18.649 1.268,4.334 -1.147,13.151 4.984,13.232 3.088,-5.655 6.21,-14.684 8.745,-20.89 l 15.475,-37.065 c 28.593,-0.765 58.273,0.496 86.97,-0.065 7.117,-12.725 16.097,-19.044 31.422,-17.072 7.209,0.928 15.218,7.178 19.229,13.053 4.248,6.148 5.796,13.767 4.283,21.086 -1.589,7.873 -6.553,14.685 -13.285,18.989 -6.542,4.159 -14.493,5.483 -22.03,3.666 -10.026,-2.377 -14.611,-8.002 -19.607,-16.115 -16.409,-0.02 -32.809,0.494 -49.237,0.02 -6.235,-0.18 -12.768,-0.177 -18.982,0.221 -7.557,16.594 -15.738,38.045 -22.918,55.212 -3.571,8.595 -7.047,17.229 -10.427,25.901 -6.538,0.687 -14.742,0.259 -21.441,0.096 -1.616,-3.543 -3.229,-8.146 -4.415,-11.894 -13.733,-43.437 -31.201,-86.44 -44.545,-129.886 -0.75,0.843 -2.473,2.853 -2.787,3.871 -5.984,19.434 -14.93,37.605 -21.878,56.709 -14.582,-0.036 -38.091,-1.061 -51.493,-0.24 -0.224,5.489 -0.092,11.946 -0.119,17.512 -16.852,0.376 -37.199,0.1 -54.196,0.026 0.487,-17.586 0.14,-37.147 -0.063,-54.768 13.722,-1.014 39.532,-0.066 54.199,-0.036 0.21,4.05 -0.004,9.591 -0.059,13.762 10.385,0.242 21.291,0.703 31.626,0.555 11.177,-27.64 24.627,-57.224 36.615,-84.661 z"
+       id="path6" />
+  </g>
+  <text
+     x="184.99567"
+     y="141.08861"
+     font-size="27.4194px"
+     font-weight="700"
+     fill="#c9d1d9"
+     id="text7"
+     style="fill:#808080;stroke-width:1.14247"
+     transform="scale(0.96886475,1.0321358)">BeamNG Research SDK</text>
+  <text
+     x="43.828667"
+     y="224.89511"
+     font-size="16px"
+     fill="#8B949E"
+     id="text8"
+     style="fill:#000000">Zero-allocation deterministic telemetry framework</text>
+  <text
+     x="46.381111"
+     y="248.61888"
+     font-size="16px"
+     fill="#8B949E"
+     id="text9"
+     style="fill:#000000">for BeamNG.drive and BeamNG.tech.</text>
+  <!-- Badges -->
+  <g
+     transform="translate(40, 310)"
+     id="g13">
+    <rect
+       x="0"
+       y="0"
+       width="70"
+       height="26"
+       rx="13"
+       fill="#161B22"
+       stroke="#30363D"
+       stroke-width="1.5"
+       id="rect9" />
+    <text
+       x="35"
+       y="17"
+       font-size="11"
+       font-weight="600"
+       fill="#C9D1D9"
+       text-anchor="middle"
+       id="text10">100 Hz</text>
+    <rect
+       x="85"
+       y="0"
+       width="80"
+       height="26"
+       rx="13"
+       fill="#161B22"
+       stroke="#30363D"
+       stroke-width="1.5"
+       id="rect10" />
+    <text
+       x="125"
+       y="17"
+       font-size="11"
+       font-weight="600"
+       fill="#C9D1D9"
+       text-anchor="middle"
+       id="text11">Zero GC</text>
+    <rect
+       x="180"
+       y="0"
+       width="90"
+       height="26"
+       rx="13"
+       fill="#161B22"
+       stroke="#30363D"
+       stroke-width="1.5"
+       id="rect11" />
+    <text
+       x="225"
+       y="17"
+       font-size="11"
+       font-weight="600"
+       fill="#C9D1D9"
+       text-anchor="middle"
+       id="text12">CSV + JSON</text>
+    <rect
+       x="285"
+       y="0"
+       width="125"
+       height="26"
+       rx="13"
+       fill="#161B22"
+       stroke="#30363D"
+       stroke-width="1.5"
+       id="rect12" />
+    <text
+       x="347.5"
+       y="17"
+       font-size="11"
+       font-weight="600"
+       fill="#C9D1D9"
+       text-anchor="middle"
+       id="text13">Research Ready</text>
+  </g>
+  <!-- Center Abstract Workflow -->
+  <line
+     x1="770"
+     y1="80"
+     x2="770"
+     y2="390"
+     stroke="#30363D"
+     stroke-dasharray="4,4"
+     stroke-width="2"
+     id="line13" />
+  <!-- Stage 1: Vehicle -->
+  <rect
+     x="755"
+     y="55"
+     width="30"
+     height="40"
+     rx="4"
+     fill="#161B22"
+     stroke="#58A6FF"
+     stroke-width="2"
+     id="rect13" />
+  <rect
+     x="750"
+     y="60"
+     width="5"
+     height="10"
+     fill="#58A6FF"
+     id="rect14" />
+  <rect
+     x="785"
+     y="60"
+     width="5"
+     height="10"
+     fill="#58A6FF"
+     id="rect15" />
+  <rect
+     x="750"
+     y="80"
+     width="5"
+     height="10"
+     fill="#58A6FF"
+     id="rect16" />
+  <rect
+     x="785"
+     y="80"
+     width="5"
+     height="10"
+     fill="#58A6FF"
+     id="rect17" />
+  <text
+     x="810"
+     y="80"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text17"
+     style="fill:#808080">Minimal wireframe vehicle</text>
+  <!-- Stage 2: Telemetry signals -->
+  <path
+     d="M 740 130 Q 755 110 770 130 T 800 130"
+     fill="none"
+     stroke="#00E5FF"
+     stroke-width="2"
+     id="path17" />
+  <path
+     d="M 740 140 Q 755 160 770 140 T 800 140"
+     fill="none"
+     stroke="#651FFF"
+     stroke-width="2"
+     id="path18" />
+  <text
+     x="810"
+     y="140"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text18"
+     style="fill:#808080">Telemetry signals</text>
+  <!-- Stage 3: Data packets -->
+  <rect
+     x="745"
+     y="175"
+     width="30"
+     height="20"
+     rx="2"
+     fill="#161B22"
+     stroke="#8957E5"
+     stroke-width="2"
+     id="rect18" />
+  <rect
+     x="755"
+     y="182"
+     width="30"
+     height="20"
+     rx="2"
+     fill="#161B22"
+     stroke="#8957E5"
+     stroke-width="2"
+     id="rect19" />
+  <rect
+     x="765"
+     y="189"
+     width="30"
+     height="20"
+     rx="2"
+     fill="#161B22"
+     stroke="#8957E5"
+     stroke-width="2"
+     id="rect20" />
+  <text
+     x="810"
+     y="195"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text20"
+     style="fill:#808080">Data packets</text>
+  <!-- Stage 4: CSV + JSON -->
+  <rect
+     x="745"
+     y="240"
+     width="18"
+     height="24"
+     rx="2"
+     fill="#161B22"
+     stroke="#3FB950"
+     stroke-width="2"
+     id="rect21" />
+  <text
+     x="754"
+     y="256"
+     font-size="10"
+     font-family="'JetBrains Mono', monospace"
+     fill="#3FB950"
+     text-anchor="middle"
+     id="text21">C</text>
+  <rect
+     x="775"
+     y="240"
+     width="18"
+     height="24"
+     rx="2"
+     fill="#161B22"
+     stroke="#3FB950"
+     stroke-width="2"
+     id="rect22" />
+  <text
+     x="784"
+     y="256"
+     font-size="10"
+     font-family="'JetBrains Mono', monospace"
+     fill="#3FB950"
+     text-anchor="middle"
+     id="text22">J</text>
+  <text
+     x="810"
+     y="255"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text23"
+     style="fill:#808080">CSV + JSON</text>
+  <!-- Stage 5: ML Nodes -->
+  <circle
+     cx="750"
+     cy="300"
+     r="3.5"
+     fill="#F85149"
+     id="circle23" />
+  <circle
+     cx="750"
+     cy="310"
+     r="3.5"
+     fill="#F85149"
+     id="circle24" />
+  <circle
+     cx="750"
+     cy="320"
+     r="3.5"
+     fill="#F85149"
+     id="circle25" />
+  <circle
+     cx="785"
+     cy="305"
+     r="3.5"
+     fill="#F85149"
+     id="circle26" />
+  <circle
+     cx="785"
+     cy="315"
+     r="3.5"
+     fill="#F85149"
+     id="circle27" />
+  <line
+     x1="750"
+     y1="300"
+     x2="785"
+     y2="305"
+     stroke="#F85149"
+     stroke-width="1.5"
+     stroke-opacity="0.6"
+     id="line27" />
+  <line
+     x1="750"
+     y1="310"
+     x2="785"
+     y2="305"
+     stroke="#F85149"
+     stroke-width="1.5"
+     stroke-opacity="0.6"
+     id="line28" />
+  <line
+     x1="750"
+     y1="310"
+     x2="785"
+     y2="315"
+     stroke="#F85149"
+     stroke-width="1.5"
+     stroke-opacity="0.6"
+     id="line29" />
+  <line
+     x1="750"
+     y1="320"
+     x2="785"
+     y2="315"
+     stroke="#F85149"
+     stroke-width="1.5"
+     stroke-opacity="0.6"
+     id="line30" />
+  <text
+     x="810"
+     y="315"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text30"
+     style="fill:#808080">Machine Learning nodes</text>
+  <!-- Stage 6: Research -->
+  <rect
+     x="755"
+     y="375"
+     width="5"
+     height="10"
+     fill="#00C2A8"
+     id="rect30" />
+  <rect
+     x="765"
+     y="368"
+     width="5"
+     height="17"
+     fill="#00C2A8"
+     id="rect31" />
+  <rect
+     x="775"
+     y="360"
+     width="5"
+     height="25"
+     fill="#00C2A8"
+     id="rect32" />
+  <circle
+     cx="760"
+     cy="370"
+     r="10"
+     fill="none"
+     stroke="#C9D1D9"
+     stroke-width="2"
+     id="circle32" />
+  <line
+     x1="753"
+     y1="377"
+     x2="745"
+     y2="385"
+     stroke="#C9D1D9"
+     stroke-width="2"
+     id="line32" />
+  <text
+     x="810"
+     y="385"
+     font-size="14"
+     font-weight="600"
+     fill="#C9D1D9"
+     id="text32"
+     style="fill:#808080">Research</text>
+  <!-- Right Section Highlights -->
+  <text
+     x="1150"
+     y="90"
+     font-size="22"
+     font-weight="bold"
+     fill="#F2CC60"
+     id="text33">Highlights</text>
+  <g
+     transform="translate(1150, 130)"
+     id="g36"
+     style="fill:#808080">
+    <!-- Modular Architecture -->
+    <rect
+       x="2"
+       y="2"
+       width="8"
+       height="8"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="rect33"
+       style="fill:#808080" />
+    <rect
+       x="14"
+       y="2"
+       width="8"
+       height="8"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="rect34"
+       style="fill:#808080" />
+    <rect
+       x="2"
+       y="14"
+       width="8"
+       height="8"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="rect35"
+       style="fill:#808080" />
+    <rect
+       x="14"
+       y="14"
+       width="8"
+       height="8"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="rect36"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="16"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text36"
+       style="fill:#808080">Modular Architecture</text>
+  </g>
+  <g
+     transform="translate(1150, 175)"
+     id="g38"
+     style="fill:#808080">
+    <!-- Registry-driven Layout -->
+    <line
+       x1="2"
+       y1="6"
+       x2="22"
+       y2="6"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="line36"
+       style="fill:#808080" />
+    <line
+       x1="2"
+       y1="14"
+       x2="22"
+       y2="14"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="line37"
+       style="fill:#808080" />
+    <line
+       x1="2"
+       y1="22"
+       x2="22"
+       y2="22"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="line38"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="17"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text38"
+       style="fill:#808080">Registry-driven Layout</text>
+  </g>
+  <g
+     transform="translate(1150, 220)"
+     id="g40"
+     style="fill:#808080">
+    <!-- Deterministic Sampling -->
+    <circle
+       cx="12"
+       cy="12"
+       r="10"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="circle38"
+       style="fill:#808080" />
+    <line
+       x1="12"
+       y1="6"
+       x2="12"
+       y2="12"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="line39"
+       style="fill:#808080" />
+    <line
+       x1="12"
+       y1="12"
+       x2="16"
+       y2="12"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="line40"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="18"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text40"
+       style="fill:#808080">Deterministic Sampling</text>
+  </g>
+  <g
+     transform="translate(1150, 265)"
+     id="g41"
+     style="fill:#808080">
+    <!-- Buffered File I/O -->
+    <path
+       d="M2 18 L2 6 L10 6 L12 8 L22 8 L22 18 Z"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="path40"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="18"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text41"
+       style="fill:#808080">Buffered File I/O</text>
+  </g>
+  <g
+     transform="translate(1150, 310)"
+     id="g42"
+     style="fill:#808080">
+    <!-- Session Metadata -->
+    <path
+       d="M4 10 L10 4 L20 4 L20 14 L14 20 Z"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="path41"
+       style="fill:#808080" />
+    <circle
+       cx="16"
+       cy="8"
+       r="1.5"
+       fill="#C9D1D9"
+       id="circle41"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="18"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text42"
+       style="fill:#808080">Session Metadata</text>
+  </g>
+  <g
+     transform="translate(1150, 355)"
+     id="g43"
+     style="fill:#808080">
+    <!-- Scientific Reproducibility -->
+    <path
+       d="M10 2 L14 2 L14 10 L20 20 L4 20 L10 10 Z"
+       fill="none"
+       stroke="#C9D1D9"
+       stroke-width="2"
+       id="path42"
+       style="fill:#808080" />
+    <text
+       x="40"
+       y="18"
+       font-size="16"
+       font-weight="600"
+       fill="#C9D1D9"
+       id="text43"
+       style="fill:#808080">Scientific Reproducibility</text>
+  </g>
+  <!-- Bottom Strip -->
+  <line
+     x1="40"
+     y1="420"
+     x2="1560"
+     y2="420"
+     stroke="#30363D"
+     stroke-width="1.5"
+     id="line43" />
+  <text
+     x="160"
+     y="470"
+     font-size="16"
+     font-weight="bold"
+     fill="#58A6FF"
+     text-anchor="middle"
+     id="text44">BeamNG Runtime</text>
+  <path
+     d="M 310 465 L 330 465 M 322 457 L 330 465 L 322 473"
+     fill="none"
+     stroke="#8B949E"
+     stroke-width="2"
+     id="path44" />
+  <text
+     x="480"
+     y="470"
+     font-size="16"
+     font-weight="bold"
+     fill="#8957E5"
+     text-anchor="middle"
+     id="text45">BRSDK</text>
+  <path
+     d="M 630 465 L 650 465 M 642 457 L 650 465 L 642 473"
+     fill="none"
+     stroke="#8B949E"
+     stroke-width="2"
+     id="path45" />
+  <text
+     x="800"
+     y="470"
+     font-size="16"
+     font-weight="bold"
+     fill="#3FB950"
+     text-anchor="middle"
+     id="text46">Dataset</text>
+  <path
+     d="M 950 465 L 970 465 M 962 457 L 970 465 L 962 473"
+     fill="none"
+     stroke="#8B949E"
+     stroke-width="2"
+     id="path46" />
+  <text
+     x="1120"
+     y="470"
+     font-size="16"
+     font-weight="bold"
+     fill="#F85149"
+     text-anchor="middle"
+     id="text47">Machine Learning</text>
+  <path
+     d="M 1270 465 L 1290 465 M 1282 457 L 1290 465 L 1282 473"
+     fill="none"
+     stroke="#8B949E"
+     stroke-width="2"
+     id="path47" />
+  <text
+     x="1440"
+     y="470"
+     font-size="16"
+     font-weight="bold"
+     fill="#00C2A8"
+     text-anchor="middle"
+     id="text48">Research</text>
+</svg>

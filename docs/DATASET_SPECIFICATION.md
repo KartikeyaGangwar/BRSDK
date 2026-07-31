@@ -1,6 +1,6 @@
 # Dataset Specification
 
-BRSDK produces datasets intended for offline machine learning, system identification, and reinforcement learning.
+BRSDK produces datasets intended for offline machine learning, system identification, and reinforcement learning. For a full breakdown of the signals contained in this dataset, refer to the [Signal Reference](SIGNAL_REFERENCE.md).
 
 ## Output Format
 - **Format**: CSV (Comma-Separated Values).
@@ -14,7 +14,7 @@ For every `telemetry_XXX.csv` generated, a sibling `telemetry_XXX_session.json` 
 ### Example Sidecar
 ```json
 {
-  "sdk_version": "1.0.0",
+  "sdk_version": "1.0.1",
   "log_hz": 100,
   "wheel_count": 4,
   "beamng_version": "0.32.1",
@@ -24,7 +24,7 @@ For every `telemetry_XXX.csv` generated, a sibling `telemetry_XXX_session.json` 
 ```
 
 ## Legacy CSV Layout Compatibility
-If BRSDK is configured to use the `legacy_csv` layout, the CSV will be byte-for-byte compatible with telemetry parsers built prior to v1.0.0. The columns follow strict ordering:
+If BRSDK is configured to use the `legacy_csv` layout, the CSV will be byte-for-byte compatible with telemetry parsers built prior to v1.0.0. The columns follow strict ordering defined by the [Architecture Layout Engine](ARCHITECTURE.md):
 
 1. Kinematics (Time, Pos, Vel, Acc, GForce)
 2. Orientation (Yaw, Pitch, Roll, Angular Velocity)

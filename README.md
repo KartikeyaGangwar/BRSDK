@@ -1,104 +1,98 @@
-# BRSDK
-BeamNG Research SDK (BRSDK)
+# BeamNG Research SDK (BRSDK)
 
-## One-line description
-A modular, high-performance telemetry extraction framework for scientific research in BeamNG.drive.
+![BRSDK Banner](assets/banner.svg)
 
-## Features
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Version](https://img.shields.io/badge/version-1.0.1-green.svg)]()
+[![BeamNG](https://img.shields.io/badge/BeamNG.drive-v0.32+-orange.svg)]()
+[![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
+
+BRSDK is a highly optimized, zero-allocation telemetry framework designed for scientific research, machine learning, and autonomous driving simulation within **BeamNG.drive** and **BeamNG.tech**.
+
+## Why BRSDK Exists
+Standard telemetry implementations often suffer from garbage collection (GC) spikes, non-deterministic physics stepping, and undocumented null values. BRSDK was built to solve these issues for researchers who require mathematically deterministic datasets for reinforcement learning and system identification.
+
+## Key Features
 - **Zero-Allocation Hot Path**: Extract thousands of rows per second with absolutely zero Lua garbage collector allocations, guaranteeing perfectly smooth and deterministic physics ticks.
-- **Orthogonal Domain Modules**: Separate modules for kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
+- **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
 - **Dynamic Layout Engine**: Swap seamlessly between backward-compatible legacy CSV schemas and alphabetical research layouts.
-- **JSON Metadata Sidecars**: Every dataset includes a `session.json` containing immutable vehicle physics constraints, map parameters, and game versions.
+- **JSON Metadata Sidecars**: Every dataset includes a valid RFC 8259 `session.json` containing immutable vehicle physics constraints, map parameters, and game versions.
 - **Automated Verification**: Built-in test suite guarantees byte-for-byte identical output and determinism across module updates.
 
-## Architecture
+## Architecture Overview
 BRSDK is built on a strict separation of concerns, operating primarily within the 2000Hz Vehicle Lua physics thread to guarantee simulation fidelity:
 - **Modules**: Perform high-frequency read-only queries against BeamNG APIs.
 - **Registry**: The single source of truth for all column metadata, units, and data types.
 - **Layout Engine**: Formats the dynamic module signals into an ordered array.
-- **Logger**: A pure IO orchestrator that flushes the buffers to disk.
+- **Logger**: A pure IO orchestrator that flushes the binary/CSV buffers to disk safely via the Virtual File System (VFS).
 
-## Repository layout
-```
-BRSDK/
-├── lua/
-│   ├── ge/extensions/
-│   │   └── telemetryLoggerGE.lua       # GameEngine extension hook
-│   └── vehicle/extensions/
-│       ├── brsdk/                      # Core SDK source
-│       │   ├── core/                   # Utilities, Config, Registry
-│       │   ├── layout/                 # Layout Engine
-│       │   └── modules/                # Telemetry domains (kinematics, etc.)
-│       └── telemetryLogger.lua         # Vehicle-side orchestrator
-└── scripts/
-    └── telemetryLogger/
-        └── modScript.lua               # Initial BeamNG mod bootstrap
-```
+For full details, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Research Data Pipeline
+
+![Research Pipeline](docs/images/pipeline.svg)
 
 ## Installation
-1. Download the latest `BRSDK_v1.0.0.zip` release.
-2. Extract the contents into your BeamNG user folder (e.g., `C:\Users\YourUser\AppData\Local\BeamNG.drive\0.32\mods\unpacked\BRSDK\`).
-3. Ensure the structure maintains both the `lua/` and `scripts/` folders in the root of the mod directory.
+
+BRSDK natively supports both **BeamNG.drive** (consumer) and **BeamNG.tech** (research/enterprise).
+
+1. Download the latest `BRSDK_v1.0.1.zip` release.
+2. Extract the contents into your BeamNG user folder:
+   - *BeamNG.drive*: `C:\Users\YourUser\AppData\Local\BeamNG.drive\0.32\mods\unpacked\BRSDK\`
+   - *BeamNG.tech*: `C:\Users\YourUser\AppData\Local\BeamNG.tech\0.32\mods\unpacked\BRSDK\`
+3. **Critical Folder Structure**: Your extracted mod folder MUST contain both the `lua/` and `scripts/` directories at the root level.
+   - `scripts/`: Contains `modScript.lua`. BeamNG's engine automatically discovers files named `modScript.lua` during mod mounting to initialize the GameEngine extension.
+   - `lua/`: Contains the actual telemetry payload (`lua/vehicle/extensions/brsdk/`). Without this, the vehicle will have no modules to load.
+
+**How it loads:**
+1. BeamNG discovers `scripts/telemetryLogger/modScript.lua` and executes it.
+2. `modScript.lua` loads `lua/ge/extensions/telemetryLoggerGE.lua` into the GameEngine VM.
+3. `telemetryLoggerGE` observes when a vehicle spawns and uses `queueLuaCommand` to inject the high-frequency logger directly into the sandboxed Vehicle Lua VM.
+
+*Common Mistake: Do not place the `lua/` folder directly into the `0.32/` root. It must be packaged as a standard unpacked mod to utilize the `modScript.lua` bootstrap sequence.*
 
 ## Quick Start
-1. Launch BeamNG.drive and load any map and vehicle.
-2. The `modScript.lua` bootstrap will automatically inject the logger into the vehicle.
-3. Telemetry is collected at 100Hz and written to the `telemetry/` folder inside your BeamNG user directory.
-4. To modify the logging frequency, edit `lua/vehicle/extensions/brsdk/core/config.lua` and adjust `M.LOG_HZ`.
+1. Launch BeamNG and load any map and vehicle.
+2. The logger will automatically mount and begin recording.
+3. Drive the vehicle to generate telemetry.
+4. Close the game or reset the vehicle to finalize the files.
+5. Retrieve your datasets from the expected output folder: `[BeamNG User Path]/0.32/telemetry/`.
 
-## Output files
-For every session, BRSDK produces two files in the output directory:
-- `telemetry_[VEHICLE_ID]_[TIMESTAMP].csv`: The main telemetry dataset.
-- `telemetry_[VEHICLE_ID]_[TIMESTAMP]_session.json`: The metadata sidecar.
+## Output Examples
 
-## CSV schema
-The output CSV follows the `legacy_csv` layout by default, exporting 86 columns (46 global vehicle state columns, and 10 columns per wheel for 4 wheels):
-- **Kinematics**: `pos_x`, `vel_x`, `acc_x`, `speed_mps`, etc.
-- **Orientation**: `yaw_deg`, `pitch_deg`, `roll_deg`, `ang_vel_roll_rads`, etc.
-- **Driver Inputs**: `throttle`, `brake`, `steering`, `clutch`, `parkingbrake`, etc.
-- **Powertrain/Thermals**: `gear`, `rpm`, `engine_load`, `coolant_temp_c`, etc.
-- **Wheels (per wheel)**: `speed_mps`, `slip`, `downforce_n`, `suspension_travel`, `contact`, etc.
+**Expected CSV Output:** (`telemetry_[ID]_[TIMESTAMP].csv`)
+![CSV Example](docs/images/csv_example.png)
 
-*Note: Missing or unsupported sensors (e.g., tire pressure on certain vehicles) will gracefully output as empty columns.*
+**Expected JSON Output:** (`telemetry_[ID]_[TIMESTAMP]_session.json`)
+![Session JSON Example](docs/images/session_json_example.png)
 
-## session.json schema
-A valid RFC 8259 JSON object capturing immutable session parameters, including:
-- **Vehicle Data**: `vehicle_config`, `cg_position` (nested object), `wheelbase`.
-- **Environment**: `coordinate_system`, `physics_rate`.
-- **System**: `creation_timestamp`, `lua_vm`, `jbeam_information`.
-*(Any nested BeamNG `jbeam` data is safely serialized, dropping unparseable userdata to ensure valid JSON)*.
-
-## How logging works
-1. **Bootstrap**: When the mod is mounted, `scripts/telemetryLogger/modScript.lua` triggers GameEngine initialization.
-2. **Injection**: `telemetryLoggerGE` observes spawned vehicles and queues Lua commands to load the logger in the Vehicle VM.
-3. **Initialization**: The Vehicle VM loads the core registry, initializes all telemetry modules, and opens the CSV/JSON file handles via the Virtual File System (VFS).
-4. **Data Loop**: On every graphical tick (`updateGFX`), the layout engine executes the bound module pointers, populating a row buffer.
-5. **Flush**: Data is flushed to disk according to `FLUSH_EVERY_ROWS` to prevent physics blocking.
-
-## BeamNG compatibility
-Compatible with BeamNG.drive v0.32+. It uses standard `extensions.load` and `queueLuaCommand` methods to cross VM boundaries, adhering to official modding guidelines.
-
-## Limitations
-- **Vehicle VM Sandbox**: Global UI parameters (like global weather or time of day) are inaccessible from the Vehicle Lua VM without GameEngine IPC.
-- **Disk I/O**: High-frequency logging (e.g., >200Hz) may cause stutter due to blocking file writes.
-- **Unavailable Sensors**: Certain vehicles may lack specific JBEAM nodes (e.g., tire pressure, suspension travel), resulting in empty CSV fields.
-
-## Roadmap
-- **v1.1.0 (High Throughput)**: Native support for Apache Arrow and Parquet binary exports directly from Lua via FFI. Python SDK (`brsdk-py`).
-- **v1.2.0 (Real-time Bridges)**: Low-latency socket bridge module to stream telemetry directly to ROS2 nodes and OpenAI Gym environments.
-- **v1.3.0 (Traffic & World)**: Modules to extract bounding boxes, velocities, and intents of surrounding AI traffic.
+## Documentation
+For deep technical integrations, consult our documentation:
+- [API Reference](docs/API_REFERENCE.md)
+- [Signal Reference](docs/SIGNAL_REFERENCE.md)
+- [Dataset Specification](docs/DATASET_SPECIFICATION.md)
+- [Reproducibility Guide](docs/REPRODUCIBILITY.md)
 
 ## Citation
 If you use BRSDK in your published research, please cite it using the provided `CITATION.cff` file, or via the following BibTeX:
 ```bibtex
-@software{BRSDK_2026,
-  author = {BRSDK Team},
-  title = {BeamNG Research SDK (BRSDK)},
-  month = {August},
-  year = {2026},
-  version = {1.0.0}
+@software{singh2026brsdk,
+  author  = {Kartikey Singh},
+  title   = {BeamNG Research SDK (BRSDK)},
+  year    = {2026},
+  version = {1.0.1},
+  url     = {https://github.com/KartikeyaGangwar/BRSDK},
+  license = {Apache-2.0}
 }
 ```
+The preferred citation is automatically available through GitHub's
+"Cite this repository" feature using the included CITATION.cff file.
 
 ## License
 BRSDK is released under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for more details.
+
+## Contributing
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) and our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on submitting pull requests and reporting issues.
+
+## Acknowledgements
+Special thanks to the BeamNG developers and the open-source autonomous driving community for their ongoing support and feedback.
