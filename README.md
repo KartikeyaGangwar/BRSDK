@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.1-green.svg)]()
 [![BeamNG](https://img.shields.io/badge/BeamNG.drive-v0.32+-orange.svg)]()
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
 
 BRSDK is a highly optimized, zero-allocation telemetry framework designed for scientific research, machine learning, and autonomous driving simulation within **BeamNG.drive** and **BeamNG.tech**.
 
@@ -83,6 +84,7 @@ If you use BRSDK in your published research, please cite it using the provided `
   version = {1.0.1},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
   license = {Apache-2.0}
+  DOI: https://doi.org/10.5281/zenodo.21729606
 }
 ```
 The preferred citation is automatically available through GitHub's

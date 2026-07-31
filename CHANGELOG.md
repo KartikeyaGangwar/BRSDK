@@ -32,3 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed monolithic legacy math and dual-path `MIGRATION_MODE` blocks.
 - Stripped unused caching and deprecated fallbacks.
+
+## [1.0.2] - 2026-08-01
+- Added official Zenodo DOI
+- Updated citation metadata

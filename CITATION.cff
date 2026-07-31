@@ -8,9 +8,9 @@ authors:
 title: "BeamNG Research SDK (BRSDK)"
 version: 1.0.1
 date-released: 2026-08-01
-url: "https://github.com/KartikeyaGangwar/BRSDK"
+url: "DOI: https://doi.org/10.5281/zenodo.21729606"
 repository-code: "https://github.com/KartikeyaGangwar/BRSDK"
-doi: "10.5281/zenodo.0000000"
+doi: "10.5281/zenodo.21729606"
 license: Apache-2.0
 abstract: >-
   BRSDK is a highly optimized, zero-allocation telemetry framework 
