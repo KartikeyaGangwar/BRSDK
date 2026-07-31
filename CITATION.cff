@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use BRSDK in your research, please cite it as below."
+authors:
+- name: "BRSDK Team"
+title: "BeamNG Research SDK (BRSDK)"
+version: 1.0.0
+date-released: 2026-08-01
+url: "https://github.com/beamng-research/brsdk"
+repository-code: "https://github.com/beamng-research/brsdk"
+doi: "10.5281/zenodo.0000000"
+license: Apache-2.0
+abstract: >-
+  BRSDK is a highly optimized, zero-allocation telemetry framework 
+  designed for scientific research, machine learning, and autonomous 
+  driving simulation within BeamNG.drive.
+keywords:
+  - BeamNG
+  - Autonomous Driving
+  - Reinforcement Learning
+  - Telemetry
+  - Simulation
+preferred-citation:
+  type: software
+  title: "BeamNG Research SDK (BRSDK)"
+  authors:
+  - name: "BRSDK Team"
+  year: 2026
+  url: "https://github.com/beamng-research/brsdk"

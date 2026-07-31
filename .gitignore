@@ -1,0 +1,25 @@
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Telemetry Output Directories (Do not commit large CSV datasets)
+/telemetry/
+*.csv
+*.json
+!session.json
+
+# Lua specific
+luac.out
+*.luac
+
+# Python (for future SDK)
+__pycache__/
+*.pyc
+.env
+venv/
