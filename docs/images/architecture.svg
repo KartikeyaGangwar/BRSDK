@@ -21,9 +21,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="2.7329677"
-     inkscape:cx="1108.319"
-     inkscape:cy="701.25234"
+     inkscape:zoom="0.96625"
+     inkscape:cx="603.36352"
+     inkscape:cy="618.36999"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -118,7 +118,10 @@
      y="104.02292"
      font-size="13px"
      fill="#c9d1d9"
-     id="text10">• Zero GC Allocations on hot path</text><text
+     id="text10"
+     style="-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Normal';font-family:Inter, 'Segoe UI', sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c9d1d9"><tspan
+       sodipodi:role="line"
+       id="tspan1">• Near-zero GC Allocations on hot path</tspan></text><text
      x="907.08081"
      y="124.02292"
      font-size="13px"
@@ -716,7 +719,10 @@
          x="170"
          y="16"
          font-weight="600"
-         id="text65">Preallocated CSV Row Buffer (Zero allocations)</text></g><!-- Group C --><g
+         id="text65"
+         style="-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Semi-Bold';font-family:Inter, 'Segoe UI', sans-serif;font-weight:600;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"><tspan
+           sodipodi:role="line"
+           id="tspan2">Preallocated CSV Row Buffer (Near-zero allocations)</tspan></text></g><!-- Group C --><g
        transform="translate(400,680)"
        id="g67"><rect
          width="400"

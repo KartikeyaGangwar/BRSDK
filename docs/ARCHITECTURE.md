@@ -1,9 +1,9 @@
 # BRSDK Architecture
 
-The BeamNG Research SDK (BRSDK) employs an orthogonal, module-based architecture designed specifically to achieve zero-allocation data extraction within the high-frequency BeamNG Vehicle Lua physics thread.
+The BeamNG Research SDK (BRSDK) employs an orthogonal, module-based architecture designed specifically to achieve near-zero allocation data extraction within the high-frequency BeamNG Vehicle Lua physics thread.
 
 ## Core Philosophy
-1. **Zero Allocation on the Hot Path**: The 2000Hz physics thread must not trigger the Lua Garbage Collector. All tables, buffers, and state dictionaries are pre-allocated during initialization. The `collectRow` loop contains strictly `O(1)` operations and bypasses closure creation or table concatenation.
+1. **Near-zero Allocation on the Hot Path**: The 2000Hz physics thread must not trigger the Lua Garbage Collector. All tables, buffers, and state dictionaries are pre-allocated during initialization. The `collectRow` loop contains strictly `O(1)` operations and bypasses closure creation or table concatenation.
 2. **Orthogonality**: Telemetry signals are isolated into domain-specific modules (e.g., `kinematics`, `powertrain`). Modules do not communicate with each other.
 3. **Decoupled Layout**: The core logger relies entirely on the `Layout Engine` to dictate the order of exported signals, enabling backward compatibility and schema elasticity.
 

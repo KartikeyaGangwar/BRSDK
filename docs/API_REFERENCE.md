@@ -14,7 +14,7 @@ Registers a new signal with the logger.
 Any module placed in `brsdk/modules/` must export the following lifecycle hooks to interface correctly with the [Dataset Specification](DATASET_SPECIFICATION.md):
 
 ### `M.initialize()`
-Called once when the vehicle spawns or resets. Pre-allocate all state tables here to comply with our [Reproducibility](REPRODUCIBILITY.md) zero-allocation guarantees.
+Called once when the vehicle spawns or resets. Pre-allocate all state tables here to comply with our [Reproducibility](REPRODUCIBILITY.md) near-zero allocation guarantees.
 
 ### `M.registerSignals(registry)`
 Called immediately after `initialize()`. Use this to invoke `registry.add` for every signal your module tracks.

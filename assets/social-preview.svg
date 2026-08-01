@@ -24,7 +24,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.85405241"
-     inkscape:cx="689.65323"
+     inkscape:cx="690.82411"
      inkscape:cy="211.34534"
      inkscape:window-width="1920"
      inkscape:window-height="991"
@@ -89,15 +89,9 @@
      transform="scale(0.83305475,1.2004013)"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.8377px;font-family:Inter, 'Segoe UI', sans-serif;-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8b949e;stroke-width:1.58353"><tspan
        sodipodi:role="line"
-       id="tspan4"
-       x="74.813255"
-       y="351.23624"
-       style="stroke-width:1.58353">Zero-allocation deterministic telemetry framework</tspan><tspan
+       id="tspan1">Near-zero dynamic allocations during telemetry collection</tspan><tspan
        sodipodi:role="line"
-       id="tspan5"
-       x="74.813255"
-       y="394.78336"
-       style="stroke-width:1.58353">for</tspan></text>
+       id="tspan2">for</tspan></text>
   <text
      x="125.98224"
      y="396.08133"

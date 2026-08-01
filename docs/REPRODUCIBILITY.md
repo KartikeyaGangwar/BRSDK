@@ -8,7 +8,7 @@ BeamNG's physics engine ticks at a fixed 2000Hz interval. However, because telem
 BRSDK mitigates this by logging the exact `elapsed_since_last_log` and `dt` values per row (see [Signal Reference](SIGNAL_REFERENCE.md)). Offline interpolation should use `elapsed_since_last_log` rather than assuming a perfect 0.01s delta.
 
 ## Zero-Allocation Guarantee
-Garbage Collection (GC) spikes in Lua can pause execution and disrupt determinism. As detailed in the [Architecture overview](ARCHITECTURE.md), BRSDK is architected to perform exactly **zero** dynamic allocations during the extraction and logging loop (`collectRow`). 
+Garbage Collection (GC) spikes in Lua can pause execution and disrupt determinism. As detailed in the [Architecture overview](ARCHITECTURE.md), BRSDK is architected to perform exactly **Near-zero** dynamic allocations during the extraction and logging loop (`collectRow`). 
 
 To verify this locally:
 1. Enable Lua debug profiling in the BeamNG console.

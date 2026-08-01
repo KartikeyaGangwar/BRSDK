@@ -8,13 +8,13 @@
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
 
-BRSDK is a highly optimized, zero-allocation telemetry framework designed for scientific research, machine learning, and autonomous driving simulation within **BeamNG.drive** and **BeamNG.tech**.
+BRSDK is a highly optimized, Near-zero dynamic allocations during telemetry collection framework designed for scientific research, machine learning, and autonomous driving simulation within **BeamNG.drive** and **BeamNG.tech**.
 
 ## Why BRSDK Exists
 Standard telemetry implementations often suffer from garbage collection (GC) spikes, non-deterministic physics stepping, and undocumented null values. BRSDK was built to solve these issues for researchers who require mathematically deterministic datasets for reinforcement learning and system identification.
 
 ## Key Features
-- **Zero-Allocation Hot Path**: Extract thousands of rows per second with absolutely zero Lua garbage collector allocations, guaranteeing perfectly smooth and deterministic physics ticks.
+- **Near - Zero Allocation Hot Path**: Extract thousands of rows per second with absolutely near-zero Lua garbage collector allocations, guaranteeing perfectly smooth and deterministic physics ticks.
 - **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
 - **Dynamic Layout Engine**: Swap seamlessly between backward-compatible legacy CSV schemas and alphabetical research layouts.
 - **JSON Metadata Sidecars**: Every dataset includes a valid RFC 8259 `session.json` containing immutable vehicle physics constraints, map parameters, and game versions.
