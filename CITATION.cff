@@ -6,7 +6,7 @@ authors:
     orcid: "https://orcid.org/0009-0009-1973-7532"
   - name: "BRSDK Contributors"
 title: "BeamNG Research SDK (BRSDK)"
-version: 1.0.1
+version: 0.1.0
 date-released: 2026-08-01
 url: "DOI: https://doi.org/10.5281/zenodo.21729606"
 repository-code: "https://github.com/KartikeyaGangwar/BRSDK"

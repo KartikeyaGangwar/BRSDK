@@ -1,0 +1,80 @@
+# =============================================================================
+# mkdocs.yml — BRSDK Python SDK documentation
+#
+# Build: uv run mkdocs build
+# Serve locally: uv run mkdocs serve
+# Deploy to GitHub Pages: uv run mkdocs gh-deploy
+# =============================================================================
+
+site_name: BRSDK Python SDK
+site_description: >-
+  Official Python interface for loading, inspecting, and analysing BRSDK
+  vehicle telemetry datasets from BeamNG.drive.
+site_url: https://beamng-research.github.io/brsdk
+repo_url: https://github.com/beamng-research/brsdk
+repo_name: beamng-research/brsdk
+edit_uri: edit/main/python/docs/
+
+# Copyright shown in the footer.
+copyright: >-
+  Copyright &copy; 2026 BRSDK Team —
+  <a href="https://github.com/beamng-research/brsdk/blob/main/LICENSE">Apache 2.0</a>
+
+# ---------------------------------------------------------------------------
+# Theme: MkDocs Material
+# The de-facto documentation standard for scientific Python projects.
+# ---------------------------------------------------------------------------
+theme:
+  name: material
+  palette:
+    # Automatic light/dark switching based on OS preference.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+# ---------------------------------------------------------------------------
+# Navigation tree — extended as phases add content
+# ---------------------------------------------------------------------------
+nav:
+  - Home: index.md
+  - Changelog: changelog.md
+  - Contributing: contributing.md
+
+# ---------------------------------------------------------------------------
+# Markdown extensions
+# ---------------------------------------------------------------------------
+markdown_extensions:
+  # Syntax highlighting for code blocks.
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  # Admonitions (Note, Warning, Tip blocks).
+  - admonition
+  - pymdownx.details
+  # Inline code highlighting.
+  - pymdownx.inlinehilite
+  # Tab blocks for multi-language examples.
+  - pymdownx.tabbed:
+      alternate_style: true
+  # Table of contents with anchors.
+  - toc:
+      permalink: true

@@ -1,0 +1,82 @@
+# =============================================================================
+# .pre-commit-config.yaml — BRSDK Python SDK
+# Run `pre-commit install` once after cloning to activate these hooks.
+# Run `pre-commit autoupdate` periodically to keep hook versions current.
+# =============================================================================
+
+# Minimum pre-commit version required to use the `rev` pinning strategy below.
+minimum_pre_commit_version: "3.7.0"
+
+repos:
+  # ---------------------------------------------------------------------------
+  # pre-commit-hooks: universal file hygiene
+  # These hooks are language-agnostic and apply to every file in the repository.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      # Ensures every text file ends with exactly one newline character.
+      # Prevents diff noise from editors that omit trailing newlines.
+      - id: end-of-file-fixer
+
+      # Removes trailing whitespace from all lines.
+      # Prevents invisible diff changes from editors that insert whitespace.
+      - id: trailing-whitespace
+
+      # Validates that all YAML files are syntactically correct.
+      # Catches broken GitHub Actions workflows and pre-commit configs early.
+      - id: check-yaml
+
+      # Validates that all JSON files are syntactically correct.
+      - id: check-json
+
+      # Validates that all TOML files (pyproject.toml, etc.) parse correctly.
+      - id: check-toml
+
+      # Prevents accidentally committing files that exceed 500 KB.
+      # Datasets and binary blobs must never enter the Python SDK repository.
+      - id: check-added-large-files
+        args: ["--maxkb=500"]
+
+      # Detects private keys accidentally staged for commit.
+      - id: detect-private-key
+
+      # Ensures merge conflict markers are never committed.
+      - id: check-merge-conflict
+
+  # ---------------------------------------------------------------------------
+  # Ruff: linter then formatter — order is mandatory.
+  # Ruff's lint --fix pass can introduce style violations that the formatter
+  # then normalises, so the linter MUST run before the formatter.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.7
+    hooks:
+      # Step 1 — Linter with auto-fix enabled.
+      # `--exit-non-zero-on-fix` causes the hook to fail and show a diff when
+      # it modifies files, preventing a silent auto-fix from bypassing review.
+      - id: ruff
+        args: ["--fix", "--exit-non-zero-on-fix"]
+
+      # Step 2 — Formatter (equivalent to Black for style normalisation).
+      - id: ruff-format
+
+  # ---------------------------------------------------------------------------
+  # Mypy: static type checking at commit time.
+  # Catches type errors before they reach CI, reducing round-trip time.
+  # The `--strict` flag is configured in pyproject.toml [tool.mypy], not here,
+  # so that IDE extensions and `uv run mypy` use the same settings.
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        # Scope mypy to the package source only; test files use looser typing.
+        files: ^python/src/brsdk/
+        # Additional dependencies must be listed here so that the isolated
+        # pre-commit virtualenv can resolve the stubs mypy needs.
+        additional_dependencies:
+          - "polars>=1.0.0"
+          - "pyarrow>=16.0.0"
+          - "pydantic>=2.5.0"
+          - "types-requests"

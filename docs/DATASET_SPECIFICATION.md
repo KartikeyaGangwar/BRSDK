@@ -14,14 +14,17 @@ For every `telemetry_XXX.csv` generated, a sibling `telemetry_XXX_session.json` 
 ### Example Sidecar
 ```json
 {
-  "sdk_version": "1.0.1",
+  "sdk_version": "0.1.0-phase1b",
   "log_hz": 100,
   "wheel_count": 4,
   "beamng_version": "0.32.1",
-  "map": "gridmap_v2",
-  "vehicle_model": "bastion"
+  "map_name": "gridmap_v2",
+  "vehicle_name": "bastion"
 }
 ```
+
+## Loading Datasets (Python)
+The official [Python SDK (`brsdk`)](../python/README.md) is the recommended way to load BRSDK datasets. It natively handles the sidecar metadata, validates the schema, and returns a high-performance Polars DataFrame.
 
 ## Legacy CSV Layout Compatibility
 If BRSDK is configured to use the `legacy_csv` layout, the CSV will be byte-for-byte compatible with telemetry parsers built prior to v1.0.0. The columns follow strict ordering defined by the [Architecture Layout Engine](ARCHITECTURE.md):

@@ -1,0 +1,98 @@
+# =============================================================================
+# .editorconfig — BRSDK Python SDK
+# https://editorconfig.org
+#
+# Supported by VS Code, PyCharm, Vim, Emacs, Neovim, Helix, and most modern
+# editors without additional plugins. Ensures consistent whitespace handling
+# across contributor environments regardless of local editor settings.
+#
+# This file covers both the Python SDK (python/) and the Lua scripts (BRSDK/)
+# since it sits at the python/ sub-directory root.
+# =============================================================================
+
+root = true
+
+# ---------------------------------------------------------------------------
+# Defaults applied to every file not matched by a more specific section.
+# ---------------------------------------------------------------------------
+[*]
+# LF line endings everywhere. Git is configured to normalise CRLF on Windows
+# via .gitattributes. Having both here and in .gitattributes is intentional
+# belt-and-suspenders for editors that do not read .gitattributes.
+end_of_line = lf
+# UTF-8 without BOM. BOM causes issues with Python source files on Windows
+# and is explicitly disallowed by PEP 8.
+charset = utf-8
+# Remove whitespace from the end of every line on save.
+trim_trailing_whitespace = true
+# Ensure every file ends with exactly one newline character.
+insert_final_newline = true
+
+# ---------------------------------------------------------------------------
+# Python source files
+# PEP 8: 4-space indentation, no tabs.
+# Ruff enforces 88-character line length; editors show a ruler but do not wrap.
+# ---------------------------------------------------------------------------
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 88
+
+# ---------------------------------------------------------------------------
+# Python stub files (type stubs)
+# Same rules as .py — they are valid Python syntax.
+# ---------------------------------------------------------------------------
+[*.pyi]
+indent_style = space
+indent_size = 4
+max_line_length = 88
+
+# ---------------------------------------------------------------------------
+# TOML — pyproject.toml and any future config files
+# 2-space indentation is conventional in TOML files across the ecosystem
+# (ruff, mypy, hatch all use 2 spaces in their own configs).
+# ---------------------------------------------------------------------------
+[*.toml]
+indent_style = space
+indent_size = 2
+
+# ---------------------------------------------------------------------------
+# YAML — GitHub Actions workflows, pre-commit config
+# 2-space indentation is the universal YAML convention.
+# ---------------------------------------------------------------------------
+[*.yml, *.yaml]
+indent_style = space
+indent_size = 2
+
+# ---------------------------------------------------------------------------
+# Markdown — documentation and community health files
+# Trim trailing whitespace EXCEPT in Markdown where trailing two spaces
+# produce a <br>. We disable trimming for .md to avoid breaking intentional
+# line-break syntax.
+# ---------------------------------------------------------------------------
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# ---------------------------------------------------------------------------
+# JSON — session.json sidecars and other config files
+# 2-space indentation matches the BeamNG session.json output format.
+# ---------------------------------------------------------------------------
+[*.json]
+indent_style = space
+indent_size = 2
+
+# ---------------------------------------------------------------------------
+# Lua — Lua source files in the BRSDK mod
+# 2-space indentation per the Lua style guide documented in CONTRIBUTING.md.
+# ---------------------------------------------------------------------------
+[*.lua]
+indent_style = space
+indent_size = 2
+
+# ---------------------------------------------------------------------------
+# Shell scripts — utility scripts in scripts/
+# ---------------------------------------------------------------------------
+[*.sh]
+indent_style = space
+indent_size = 2

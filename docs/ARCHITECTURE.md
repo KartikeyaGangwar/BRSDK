@@ -41,3 +41,4 @@ The Layout Engine defines the sequence in which columns appear in the output dat
 3. **Runtime**: Logger calls `update()` on modules. Modules fetch from C++ API.
 4. **Runtime**: Logger iterates the cached layout closures to fetch state.
 5. **Runtime**: Logger flushes to telemetry dataset.
+6. **Post-processing**: The dataset is loaded via the [Python SDK](../python/README.md) (`brsdk.load()`) for downstream scientific analysis.
