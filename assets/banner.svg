@@ -23,9 +23,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="3.1342508"
-     inkscape:cx="331.81773"
-     inkscape:cy="125.8674"
+     inkscape:zoom="0.7835627"
+     inkscape:cx="764.45701"
+     inkscape:cy="139.74631"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -72,96 +72,37 @@
      style="fill:#808080;stroke-width:1.14247"
      transform="scale(0.96886475,1.0321358)">BeamNG Research SDK</text>
   <text
-     x="43.828667"
-     y="224.89511"
+     x="62.050438"
+     y="218.86964"
      font-size="16px"
      fill="#8B949E"
      id="text8"
-     style="fill:#000000">Zero-allocation deterministic telemetry framework</text>
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.4631px;font-family:Inter, 'Segoe UI', sans-serif;-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#808080;stroke-width:1.15394"
+     transform="scale(0.9322669,1.0726542)"><tspan
+       sodipodi:role="line"
+       id="tspan1"
+       x="62.050438"
+       y="218.86964"
+       style="stroke-width:1.15394;fill:#808080">Zero-allocation deterministic telemetry framework</tspan><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       x="62.050438"
+       y="241.94852"
+       style="stroke-width:1.15394;fill:#808080">for</tspan></text>
   <text
-     x="46.381111"
-     y="248.61888"
+     x="95.411751"
+     y="228.64975"
      font-size="16px"
      fill="#8B949E"
      id="text9"
-     style="fill:#000000">for BeamNG.drive and BeamNG.tech.</text>
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.0354px;font-family:Inter, 'Segoe UI', sans-serif;-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#808080;stroke-width:1.25221"
+     transform="scale(0.87934751,1.1372068)"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       x="95.411751"
+       y="228.64975"
+       style="stroke-width:1.25221;fill:#808080">BeamNG.drive and BeamNG.tech</tspan></text>
   <!-- Badges -->
-  <g
-     transform="translate(40, 310)"
-     id="g13">
-    <rect
-       x="0"
-       y="0"
-       width="70"
-       height="26"
-       rx="13"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="1.5"
-       id="rect9" />
-    <text
-       x="35"
-       y="17"
-       font-size="11"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text10">100 Hz</text>
-    <rect
-       x="85"
-       y="0"
-       width="80"
-       height="26"
-       rx="13"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="1.5"
-       id="rect10" />
-    <text
-       x="125"
-       y="17"
-       font-size="11"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text11">Zero GC</text>
-    <rect
-       x="180"
-       y="0"
-       width="90"
-       height="26"
-       rx="13"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="1.5"
-       id="rect11" />
-    <text
-       x="225"
-       y="17"
-       font-size="11"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text12">CSV + JSON</text>
-    <rect
-       x="285"
-       y="0"
-       width="125"
-       height="26"
-       rx="13"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="1.5"
-       id="rect12" />
-    <text
-       x="347.5"
-       y="17"
-       font-size="11"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text13">Research Ready</text>
-  </g>
   <!-- Center Abstract Workflow -->
   <line
      x1="770"
