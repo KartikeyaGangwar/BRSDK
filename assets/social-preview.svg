@@ -24,8 +24,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.85405241"
-     inkscape:cx="654.52658"
-     inkscape:cy="265.20621"
+     inkscape:cx="689.65323"
+     inkscape:cy="211.34534"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -33,10 +33,13 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg31" />
   <rect
-     width="1280"
-     height="640"
-     fill="#0D1117"
-     id="rect1" />
+     width="1255.4114"
+     height="599.01886"
+     fill="#0d1117"
+     id="rect1"
+     x="14.506232"
+     y="18.219793"
+     style="stroke-width:0.958117" />
   <!-- Logo -->
   <g
      transform="matrix(0.37647045,0,0,0.44702875,23.912256,-51.092035)"
@@ -78,363 +81,290 @@
      transform="scale(0.94409631,1.059214)"
      style="stroke-width:1.04936">BeamNG Research SDK</text>
   <text
-     x="93.503532"
-     y="297.64847"
-     font-size="27.9532px"
+     x="74.813255"
+     y="351.23624"
+     font-size="28.7471px"
      fill="#8b949e"
      id="text8"
-     transform="scale(0.85525401,1.1692433)"
-     style="stroke-width:1.2706">Zero-allocation deterministic telemetry framework</text>
+     transform="scale(0.83305475,1.2004013)"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:34.8377px;font-family:Inter, 'Segoe UI', sans-serif;-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#8b949e;stroke-width:1.58353"><tspan
+       sodipodi:role="line"
+       id="tspan4"
+       x="74.813255"
+       y="351.23624"
+       style="stroke-width:1.58353">Zero-allocation deterministic telemetry framework</tspan><tspan
+       sodipodi:role="line"
+       id="tspan5"
+       x="74.813255"
+       y="394.78336"
+       style="stroke-width:1.58353">for</tspan></text>
   <text
-     x="81.932739"
-     y="376.84796"
-     font-size="28.451px"
-     fill="#8b949e"
-     id="text9"
-     transform="scale(0.97397524,1.0267201)"
-     style="stroke-width:1.42255">for</text>
-  <text
-     x="138.46222"
-     y="340.39307"
-     font-size="27.4919px"
+     x="125.98224"
+     y="396.08133"
+     font-size="32.4989px"
      fill="#c9d1d9"
      font-weight="600"
      id="text10"
-     transform="scale(0.87730617,1.1398529)"
-     style="stroke-width:1.24963">BeamNG.drive &amp; BeamNG.tech</text>
+     transform="scale(0.83473164,1.1979898)"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:35.8998px;font-family:Inter, 'Segoe UI', sans-serif;-inkscape-font-specification:'Inter, Segoe UI, sans-serif, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#c9d1d9;stroke-width:1.6318"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       x="125.98224"
+       y="396.08133"
+       style="stroke-width:1.6318">BeamNG.drive &amp; BeamNG.tech</tspan></text>
   <!-- Bottom Badges -->
-  <g
-     transform="translate(80, 520)"
-     id="g14">
-    <!-- 100 Hz -->
-    <rect
-       x="0"
-       y="0"
-       width="90"
-       height="36"
-       rx="18"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="2"
-       id="rect10" />
-    <text
-       x="45"
-       y="24"
-       font-size="14"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text11">100 Hz</text>
-    <!-- Zero GC -->
-    <rect
-       x="110"
-       y="0"
-       width="110"
-       height="36"
-       rx="18"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="2"
-       id="rect11" />
-    <text
-       x="165"
-       y="24"
-       font-size="14"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text12">Zero GC</text>
-    <!-- CSV + JSON -->
-    <rect
-       x="240"
-       y="0"
-       width="130"
-       height="36"
-       rx="18"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="2"
-       id="rect12" />
-    <text
-       x="305"
-       y="24"
-       font-size="14"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text13">CSV + JSON</text>
-    <!-- Research Ready -->
-    <rect
-       x="390"
-       y="0"
-       width="160"
-       height="36"
-       rx="18"
-       fill="#161B22"
-       stroke="#30363D"
-       stroke-width="2"
-       id="rect13" />
-    <text
-       x="470"
-       y="24"
-       font-size="14"
-       font-weight="600"
-       fill="#C9D1D9"
-       text-anchor="middle"
-       id="text14">Research Ready</text>
-  </g>
   <!-- Right Section: Technical Illustration -->
   <line
      x1="900"
      y1="130"
      x2="900"
-     y2="470"
-     stroke="#30363D"
-     stroke-dasharray="6,6"
-     stroke-width="3"
+     y2="532.49042"
+     stroke="#30363d"
+     stroke-dasharray="6, 6"
+     stroke-width="3.11068"
      id="line14" />
   <!-- Node 1: Vehicle -->
   <rect
      x="875"
-     y="60"
+     y="71.708885"
      width="50"
      height="60"
      rx="6"
-     fill="#161B22"
-     stroke="#58A6FF"
+     fill="#161b22"
+     stroke="#58a6ff"
      stroke-width="3"
      id="rect14" />
   <rect
-     x="868"
-     y="70"
+     x="867.41455"
+     y="79.367104"
      width="7"
      height="15"
-     fill="#58A6FF"
+     fill="#58a6ff"
      rx="2"
      id="rect15" />
   <rect
      x="925"
-     y="70"
+     y="77.610771"
      width="7"
      height="15"
-     fill="#58A6FF"
+     fill="#58a6ff"
      rx="2"
      id="rect16" />
   <rect
      x="868"
-     y="95"
+     y="105.53799"
      width="7"
      height="15"
-     fill="#58A6FF"
+     fill="#58a6ff"
      rx="2"
      id="rect17" />
   <rect
-     x="925"
-     y="95"
+     x="925.58545"
+     y="106.12344"
      width="7"
      height="15"
-     fill="#58A6FF"
+     fill="#58a6ff"
      rx="2"
      id="rect18" />
   <text
      x="960"
-     y="96"
-     font-size="20"
+     y="110.05066"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text18">Abstract wireframe vehicle</text>
   <!-- Node 2: Telemetry -->
   <path
-     d="M 850 160 Q 875 130 900 160 T 950 160"
+     d="m 837.12023,190.44309 q 25,-30 50,0 25,30 50,0"
      fill="none"
-     stroke="#00E5FF"
+     stroke="#00e5ff"
      stroke-width="3"
      id="path18" />
   <path
-     d="M 850 180 Q 875 210 900 180 T 950 180"
+     d="m 840.63289,211.61399 q 25,30 50,0 25,-30 50,0"
      fill="none"
-     stroke="#651FFF"
+     stroke="#651fff"
      stroke-width="3"
      id="path19" />
   <text
-     x="960"
-     y="176"
-     font-size="20"
+     x="959.41455"
+     y="207.02853"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text19">Telemetry signals</text>
   <!-- Node 3: CSV -->
   <rect
-     x="880"
-     y="225"
+     x="881.75635"
+     y="256.61398"
      width="40"
      height="50"
      rx="4"
-     fill="#161B22"
-     stroke="#3FB950"
+     fill="#161b22"
+     stroke="#3fb950"
      stroke-width="3"
      id="rect19" />
   <path
-     d="M890 240 L910 240 M890 250 L910 250 M890 260 L900 260"
-     stroke="#3FB950"
+     d="m 888.82911,266.34499 h 20 m -20,10 h 20 m -20,10 h 10"
+     stroke="#3fb950"
      stroke-width="3"
      stroke-linecap="round"
      id="path20" />
   <text
-     x="960"
-     y="256"
-     font-size="20"
+     x="963.5127"
+     y="283.51587"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text20">CSV</text>
   <!-- Node 4: Session JSON -->
   <rect
-     x="880"
-     y="305"
+     x="881.5849"
+     y="347.92108"
      width="40"
      height="50"
      rx="4"
-     fill="#161B22"
-     stroke="#8957E5"
+     fill="#161b22"
+     stroke="#8957e5"
      stroke-width="3"
      id="rect20" />
   <text
-     x="900"
-     y="340"
-     font-size="24"
+     x="901.75635"
+     y="378.09546"
+     font-size="24px"
      font-weight="bold"
      font-family="'JetBrains Mono', monospace"
-     fill="#8957E5"
+     fill="#8957e5"
      text-anchor="middle"
      id="text21">{ }</text>
   <text
-     x="960"
-     y="336"
-     font-size="20"
+     x="961.34235"
+     y="372.55222"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text22">Session JSON</text>
   <!-- Node 5: Machine Learning -->
   <circle
-     cx="875"
-     cy="390"
+     cx="876.09985"
+     cy="440.47302"
      r="6"
-     fill="#F85149"
+     fill="#f85149"
      id="circle22" />
   <circle
-     cx="875"
-     cy="410"
+     cx="872.34467"
+     cy="465.36966"
      r="6"
-     fill="#F85149"
+     fill="#f85149"
      id="circle23" />
   <circle
-     cx="875"
-     cy="430"
+     cx="877.3418"
+     cy="488.09598"
      r="6"
-     fill="#F85149"
+     fill="#f85149"
      id="circle24" />
   <circle
-     cx="925"
-     cy="400"
+     cx="929.99713"
+     cy="472.34753"
      r="6"
-     fill="#F85149"
+     fill="#f85149"
      id="circle25" />
   <circle
-     cx="925"
-     cy="420"
+     cx="929.13971"
+     cy="449.26718"
      r="6"
-     fill="#F85149"
+     fill="#f85149"
      id="circle26" />
   <line
-     x1="875"
-     y1="390"
-     x2="925"
-     y2="400"
-     stroke="#F85149"
+     x1="876.27136"
+     y1="441.20053"
+     x2="926.27136"
+     y2="451.20053"
+     stroke="#f85149"
      stroke-width="2"
      stroke-opacity="0.6"
      id="line26" />
   <line
-     x1="875"
-     y1="410"
-     x2="925"
-     y2="400"
-     stroke="#F85149"
+     x1="876.85681"
+     y1="462.51346"
+     x2="926.85681"
+     y2="452.51346"
+     stroke="#f85149"
      stroke-width="2"
      stroke-opacity="0.6"
      id="line27" />
   <line
-     x1="875"
-     y1="410"
-     x2="925"
-     y2="420"
-     stroke="#F85149"
+     x1="876.1709"
+     y1="464.09833"
+     x2="926.1709"
+     y2="474.09833"
+     stroke="#f85149"
      stroke-width="2"
      stroke-opacity="0.6"
      id="line28" />
   <line
-     x1="875"
-     y1="430"
-     x2="925"
-     y2="420"
-     stroke="#F85149"
+     x1="877.17035"
+     y1="486.26862"
+     x2="927.17035"
+     y2="476.26862"
+     stroke="#f85149"
      stroke-width="2"
      stroke-opacity="0.6"
      id="line29" />
   <text
-     x="960"
-     y="416"
-     font-size="20"
+     x="957.75867"
+     y="466.95804"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text29">Machine Learning</text>
   <!-- Node 6: Research -->
   <rect
-     x="880"
-     y="500"
+     x="883.2702"
+     y="566.61084"
      width="8"
      height="15"
-     fill="#00C2A8"
+     fill="#00c2a8"
      rx="2"
      id="rect29" />
   <rect
-     x="892"
-     y="485"
+     x="896.34064"
+     y="550.8833"
      width="8"
      height="30"
-     fill="#00C2A8"
+     fill="#00c2a8"
      rx="2"
      id="rect30" />
   <rect
-     x="904"
-     y="470"
+     x="910.43988"
+     y="535.9837"
      width="8"
      height="45"
-     fill="#00C2A8"
+     fill="#00c2a8"
      rx="2"
      id="rect31" />
   <circle
-     cx="895"
-     cy="490"
+     cx="902.09546"
+     cy="546.70691"
      r="14"
      fill="none"
-     stroke="#C9D1D9"
+     stroke="#c9d1d9"
      stroke-width="3"
      id="circle31" />
   <line
-     x1="885"
-     y1="500"
-     x2="870"
-     y2="515"
-     stroke="#C9D1D9"
+     x1="891.7525"
+     y1="557.60596"
+     x2="876.7525"
+     y2="572.60596"
+     stroke="#c9d1d9"
      stroke-width="4"
      stroke-linecap="round"
      id="line31" />
   <text
-     x="960"
-     y="496"
-     font-size="20"
+     x="961.09985"
+     y="564.35699"
+     font-size="20px"
      font-weight="600"
-     fill="#C9D1D9"
+     fill="#c9d1d9"
      id="text31">Research</text>
 </svg>
