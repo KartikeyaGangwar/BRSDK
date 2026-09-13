@@ -1,6 +1,6 @@
 # BRSDK Signal Reference
 
-This document provides a field-level specification of the BRSDK `v0.1.0` telemetry dataset schema, defaulting to the `legacy_csv` layout.
+This document provides a field-level specification of the BRSDK `v2.0.0` telemetry dataset schema, defaulting to the `legacy_csv` layout.
 
 BRSDK operates primarily as a read-only bridge to the 2000Hz Vehicle Lua physics engine. The exact list of signals exported depends on your layout engine profile, but the core engine behaviors and nullability rules apply universally.
 

@@ -23,7 +23,7 @@ _No unreleased changes._
 
 ---
 
-## [0.1.0] — 2026-08-01
+## [2.0.0] — 2026-09-13
 
 ### Added
 
@@ -51,5 +51,5 @@ _No unreleased changes._
 
 ---
 
-[Unreleased]: https://github.com/KartikeyaGangwar/BRSDK/compare/python-v0.1.0...HEAD
-[0.1.0]: https://github.com/KartikeyaGangwar/BRSDK/releases/tag/python-v0.1.0
+[Unreleased]: https://github.com/KartikeyaGangwar/BRSDK/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/KartikeyaGangwar/BRSDK/releases/tag/v2.0.0

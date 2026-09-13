@@ -25,9 +25,9 @@ local M = {}
 --   LOGGER_VERSION — semantic version of the logger module specifically
 -- ----------------------------------------------------------------------------
 
-M.SDK_VERSION    = '0.1.0-phase1b'   -- overall SDK release
+M.SDK_VERSION    = '2.0.0'           -- overall SDK release
 M.SCHEMA_VERSION = '2'               -- bumped: ang_vel columns renamed in 1a
-M.LOGGER_VERSION = '0.1.0'          -- telemetryLogger.lua release
+M.LOGGER_VERSION = '2.0.0'           -- telemetryLogger.lua release
 
 -- ----------------------------------------------------------------------------
 -- LOGGER SETTINGS

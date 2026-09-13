@@ -1,7 +1,7 @@
 # RFC-0001: Canonical Data Model
 
 **Status**: Approved (Frozen Architecture)  
-**Component**: `brsdk-python` v0.1.0  
+**Component**: `brsdk-python` v2.0.0  
 **Author**: BRSDK Technical Steering Committee  
 
 ---

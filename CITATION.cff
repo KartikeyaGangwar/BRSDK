@@ -8,8 +8,8 @@ authors:
     email: "kartikeysingh525@protonmail.com"
   - name: "BRSDK Contributors"
 title: "BeamNG Research SDK (BRSDK)"
-version: 0.1.0
-date-released: 2026-08-01
+version: 2.0.0
+date-released: 2026-09-13
 url: "https://doi.org/10.5281/zenodo.21729606"
 repository-code: "https://github.com/KartikeyaGangwar/BRSDK"
 doi: "10.5281/zenodo.21729606"

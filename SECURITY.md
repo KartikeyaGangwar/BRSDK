@@ -6,8 +6,8 @@ Currently, only the latest release of BRSDK is actively supported with security 
 
 | Version | Supported |
 | ------- | --------- |
-| 0.1.0   | Yes       |
-| < 0.1.0 | No        |
+| 2.0.0   | Yes       |
+| < 2.0.0 | No        |
 
 ## Reporting a Vulnerability
 

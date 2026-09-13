@@ -1,6 +1,6 @@
 # brsdk-python
 
-> **Status**: Pre-Alpha (v0.1.0) — API is unstable and subject to change without notice.
+> **Status**: Production Release (v2.0.0) — Scientific Python SDK.
 
 Official Python SDK for loading, inspecting, and analysing
 [BRSDK](https://github.com/KartikeyaGangwar/BRSDK) telemetry datasets.
@@ -125,9 +125,9 @@ If you use BRSDK in academic work, please cite:
 ```bibtex
 @software{brsdk2026,
   title   = {{BRSDK}: {BeamNG} Research SDK},
-  author  = {{BRSDK Team}},
+  author  = {Singh, Kartikey and {BRSDK Contributors}},
   year    = {2026},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
-  version = {0.1.0},
+  version = {2.0.0},
 }
 ```

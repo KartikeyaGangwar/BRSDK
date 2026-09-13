@@ -1,6 +1,6 @@
 -- ============================================================================
 --  telemetryLogger.lua   (VEHICLE-SIDE extension)
---  BeamNG Research SDK — v0.1.0
+--  BeamNG Research SDK — v2.0.0
 --
 --  Writes one CSV row per sample at ~100 Hz, plus a session.json sidecar.
 --  Loaded into each vehicle's Lua VM by telemetryLoggerGE.lua.

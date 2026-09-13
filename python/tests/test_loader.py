@@ -45,8 +45,8 @@ REAL_SESSION_JSON: dict[str, object] = {
     # It intentionally uses the same key names as the Lua framework:
     #   vehicle_name (not vehicle_model), map_name (not map),
     #   beamng_version may be sentinel.
-    "sdk_version": "0.1.0-phase1b",
-    "logger_version": "0.1.0",
+    "sdk_version": "2.0.0",
+    "logger_version": "2.0.0",
     "schema_version": "2",
     "log_hz": 100,
     "wheel_count": 4,
@@ -183,7 +183,7 @@ class TestLoader:
         assert dataset.columns == ["frame_id", "simulation_time", "vel_x"]
 
         # Metadata (real schema)
-        assert dataset.session.sdk_version == "0.1.0-phase1b"
+        assert dataset.session.sdk_version == "2.0.0"
         assert dataset.session.log_hz == 100
         assert dataset.session.vehicle_name == "Ibishu Pessima"
         assert dataset.session.wheel_count == 4

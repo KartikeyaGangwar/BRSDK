@@ -1,6 +1,6 @@
 # BRSDK Python SDK
 
-> **Version 0.1.0** · Pre-Alpha · [GitHub](https://github.com/KartikeyaGangwar/BRSDK) · [PyPI](https://pypi.org/project/brsdk)
+> **Version 2.0.0** · [GitHub](https://github.com/KartikeyaGangwar/BRSDK) · [PyPI](https://pypi.org/project/brsdk)
 
 Official Python interface for loading, inspecting, and analysing telemetry
 datasets produced by the **BeamNG Research SDK (BRSDK)**.

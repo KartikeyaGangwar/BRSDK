@@ -3,7 +3,7 @@
 ![BRSDK Banner](assets/banner.svg)
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)]()
+[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)]()
 [![BeamNG](https://img.shields.io/badge/BeamNG.drive-v0.32+-orange.svg)]()
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
@@ -42,7 +42,7 @@ For full details, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 BRSDK supports both **BeamNG.drive** (simulation) and **BeamNG.tech** (research platform).
 
-1. Download the latest `BRSDK_v0.1.0.zip` release.
+1. Download the latest `BRSDK_v2.0.0.zip` release.
 2. Extract the contents into your BeamNG user folder:
    - *BeamNG.drive*: `C:\Users\YourUser\AppData\Local\BeamNG.drive\0.32\mods\unpacked\BRSDK\`
    - *BeamNG.tech*: `C:\Users\YourUser\AppData\Local\BeamNG.tech\0.32\mods\unpacked\BRSDK\`
@@ -87,7 +87,7 @@ If you use BRSDK in your published research, please cite it using the provided `
   author  = {Kartikey Singh},
   title   = {BeamNG Research SDK (BRSDK)},
   year    = {2026},
-  version = {0.1.0},
+  version = {2.0.0},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
   license = {Apache-2.0},
   doi     = {10.5281/zenodo.21729606}

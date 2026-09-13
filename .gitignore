@@ -23,3 +23,7 @@ __pycache__/
 *.pyc
 .env
 venv/
+
+# Build and Release Artefacts
+*.zip
+dist/
