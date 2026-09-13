@@ -8,10 +8,6 @@
 #   quality  — ruff lint + ruff format check + mypy (fast, no install extras)
 #   test     — pytest with coverage across OS × Python matrix
 #   build    — verify the wheel and sdist build cleanly (packaging smoke test)
-#
-# SPEC 8 note: action versions are pinned to tags here for readability.
-# Before the first PyPI release, migrate all `uses:` lines to full SHA pins
-# per the Scientific Python SPEC 8 supply-chain security recommendation.
 # =============================================================================
 
 name: CI
@@ -20,7 +16,6 @@ on:
   push:
     branches: ["main"]
     paths:
-      # Only run CI when Python SDK files change, not when Lua scripts change.
       - "python/**"
       - ".github/workflows/ci.yml"
   pull_request:
@@ -29,24 +24,15 @@ on:
       - "python/**"
       - ".github/workflows/ci.yml"
 
-# Cancel in-progress runs for the same branch when a new commit is pushed.
-# This prevents wasted runner minutes on stale pushes during rapid development.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 defaults:
   run:
-    # All `run:` steps execute from the python/ sub-directory where
-    # pyproject.toml lives.
     working-directory: python
 
 jobs:
-  # ---------------------------------------------------------------------------
-  # Job 1: Code quality (ruff + mypy)
-  # Runs on a single fast runner — no matrix needed for static analysis.
-  # Fails fast before the expensive test matrix starts.
-  # ---------------------------------------------------------------------------
   quality:
     name: "Quality — ruff & mypy"
     runs-on: ubuntu-latest
@@ -58,7 +44,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v4
         with:
-          # Pin uv version to keep CI deterministic.
           version: "0.4.x"
           enable-cache: true
 
@@ -68,8 +53,6 @@ jobs:
           python-version: "3.12"
 
       - name: Install development dependencies
-        # Install the package with the `dev` extra only.
-        # No ml/viz extras needed for static analysis.
         run: uv sync --extra dev
 
       - name: Ruff — lint
@@ -81,20 +64,12 @@ jobs:
       - name: Mypy — strict type check
         run: uv run mypy src/brsdk
 
-  # ---------------------------------------------------------------------------
-  # Job 2: Test matrix (pytest + coverage)
-  # Runs on Ubuntu and Windows across all supported Python versions.
-  # Windows is included because BRSDK users commonly run BeamNG on Windows
-  # and may analyse datasets on the same machine.
-  # ---------------------------------------------------------------------------
   test:
     name: "Test — Python ${{ matrix.python-version }} / ${{ matrix.os }}"
     needs: quality
     runs-on: ${{ matrix.os }}
 
     strategy:
-      # Do not cancel sibling matrix jobs on first failure.
-      # A failure on Windows/3.10 should not suppress results on Ubuntu/3.12.
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -116,8 +91,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install package and dev dependencies
-        # Sync all extras so that optional-dependency import paths are
-        # exercised in the test suite even though they are not used yet.
         run: uv sync --extra dev
 
       - name: Run pytest with coverage
@@ -129,21 +102,14 @@ jobs:
           tests/
 
       - name: Upload coverage report to Codecov
-        # Only upload from Ubuntu to avoid duplicate coverage submissions.
         if: matrix.os == 'ubuntu-latest'
         uses: codecov/codecov-action@v4
         with:
           files: python/coverage.xml
           flags: python-${{ matrix.python-version }}
           fail_ci_if_error: false
-          # Token is optional for public repositories but recommended.
           token: ${{ secrets.CODECOV_TOKEN }}
 
-  # ---------------------------------------------------------------------------
-  # Job 3: Build smoke test
-  # Verifies that `uv build` produces a valid sdist and wheel on both OSes.
-  # Does NOT publish to PyPI — that is a separate, manually triggered workflow.
-  # ---------------------------------------------------------------------------
   build:
     name: "Build — ${{ matrix.os }}"
     needs: quality
@@ -173,8 +139,6 @@ jobs:
         run: uv build
 
       - name: Verify build artefacts exist
-        # Shell-agnostic artefact check: confirm dist/ contains at least one
-        # .whl file and one .tar.gz file before the job exits.
         shell: python
         run: |
           import pathlib, sys

@@ -76,7 +76,7 @@ class SDKMetadata(BaseModel):
     sdk_version: str = Field(
         default=_UNAVAILABLE,
         description="Semantic version of the BRSDK Lua framework.",
-        examples=["1.0.1", "0.1.0-phase1b"],
+        examples=["0.1.0", "0.1.0-phase1b"],
     )
     logger_version: str = Field(
         default=_UNAVAILABLE,

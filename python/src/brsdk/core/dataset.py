@@ -70,7 +70,7 @@ class Dataset:
     >>> import brsdk
     >>> ds = brsdk.load("telemetry_001.csv")  # doctest: +SKIP
     >>> print(ds.session)                      # doctest: +SKIP
-    SessionMetadata(sdk_version='1.0.1', log_hz=100, ...)
+    SessionMetadata(sdk_version='0.1.0-phase1b', log_hz=100, ...)
     >>> print(ds.dataframe.head())             # doctest: +SKIP
     shape: (5, 47)
     ...

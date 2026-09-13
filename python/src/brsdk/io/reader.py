@@ -178,7 +178,7 @@ def read_csv(csv_path: Path) -> pl.DataFrame:
             csv_path=str(csv_path),
             detail=(
                 f"Missing required BRSDK columns: {sorted(missing)}. "
-                "Ensure the file was produced by BRSDK ≥ 1.0.0."
+                "Ensure the file was produced by BRSDK ≥ 0.1.0."
             ),
         )
 

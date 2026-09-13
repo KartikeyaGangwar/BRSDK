@@ -19,8 +19,8 @@ Only the latest published minor release receives security patches.
 
 | Version  | Supported          |
 | -------- | ------------------ |
-| 0.1.x    | ✅ (current)       |
-| < 0.1.0  | ❌                 |
+| 0.1.x    | Yes (current)      |
+| < 0.1.0  | No                 |
 
 Once a new minor version is published (e.g., 0.2.0), the previous minor
 (0.1.x) enters end-of-life unless a critical vulnerability requires a

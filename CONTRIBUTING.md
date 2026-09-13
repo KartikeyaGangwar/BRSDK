@@ -1,6 +1,6 @@
 # Contributing to BRSDK
 
-First off, thank you for considering contributing to the BeamNG Research SDK (BRSDK)! 
+Contributions to the BeamNG Research SDK (BRSDK) are welcome. This document outlines coding standards and the contribution workflow. 
 
 ## Code Style
 
@@ -11,15 +11,18 @@ First off, thank you for considering contributing to the BeamNG Research SDK (BR
 - **Modularity**: Domain logic must reside in `brsdk/modules/`. The logger itself must remain a pure orchestrator.
 
 ### Python
-- **Format**: Follow PEP-8. Use `black` with an 88-character line limit.
-- **Types**: Type hints are mandatory for all public functions.
+- **Format & Linting**: Follow PEP-8 via [Ruff](https://docs.astral.sh/ruff/) with an 88-character line limit.
+- **Types**: Full static typing mandatory (`mypy --strict`).
+- **Guidelines**: See detailed instructions in [python/CONTRIBUTING.md](python/CONTRIBUTING.md).
 
 ### JSON / Markdown
 - **JSON**: 2 spaces, double quotes.
-- **Markdown**: Hard wrap at 80 characters.
+- **Markdown**: Standard GitHub-flavored Markdown.
 
 ## Pull Request Process
 1. Fork the repo and create your branch from `main`.
-2. If you've added code that should be tested, add tests to `verificationRunner.lua`.
-3. Ensure your code passes all golden parity tests.
-4. Issue that pull request!
+2. Ensure all quality gates pass:
+   - For Python: `uv run ruff check .`, `uv run mypy src`, and `uv run pytest`.
+   - For Lua: verify that telemetry collection remains strictly allocation-free on the 2000Hz hot path.
+3. Update relevant documentation and changelogs.
+4. Submit a pull request against the `main` branch.

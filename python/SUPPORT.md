@@ -4,9 +4,9 @@
 
 Please search the following resources before opening an issue:
 
-1. [Documentation](https://beamng-research.github.io/brsdk) — API reference,
-   tutorials, and the cookbook.
-2. [GitHub Issues](https://github.com/beamng-research/brsdk/issues) — closed
+1. [Documentation](https://KartikeyaGangwar.github.io/BRSDK) — API reference,
+   tutorials, and architecture specs.
+2. [GitHub Issues](https://github.com/KartikeyaGangwar/BRSDK/issues) — closed
    issues often contain the answer.
 3. [CHANGELOG.md](CHANGELOG.md) — the problem may already be fixed in a newer
    version.
@@ -17,9 +17,9 @@ Please search the following resources before opening an issue:
 
 | Channel | Use for |
 |---------|---------|
-| [GitHub Discussions](https://github.com/beamng-research/brsdk/discussions) | General questions, research workflow help, feature ideas |
-| [GitHub Issues](https://github.com/beamng-research/brsdk/issues/new/choose) | Confirmed bugs and missing documentation |
-| [GitHub Security Advisories](https://github.com/beamng-research/brsdk/security/advisories/new) | Vulnerability reports (do **not** use public issues) |
+| [GitHub Discussions](https://github.com/KartikeyaGangwar/BRSDK/discussions) | General questions, research workflow help, feature ideas |
+| [GitHub Issues](https://github.com/KartikeyaGangwar/BRSDK/issues/new) | Confirmed bugs and missing documentation |
+| [GitHub Security Advisories](https://github.com/KartikeyaGangwar/BRSDK/security) | Vulnerability reports (do **not** use public issues) |
 
 **Commercial support is not available.**
 BRSDK is maintained on a volunteer basis by researchers.

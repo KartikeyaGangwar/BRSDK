@@ -21,7 +21,7 @@ of every researcher who depends on this library.
 
 ## Before You Start
 
-- Read [RFC-0001](docs/rfcs/rfc-0001-canonical-data-model.md).
+- Read [RFC-0001](rfcs/rfc-0001-canonical-data-model.md).
   It is the authoritative data model. Do not propose alternatives in a PR.
 - Check the issue tracker before opening a new issue.
 - For major features or API changes, open an issue for discussion before writing
@@ -104,34 +104,6 @@ Every public module, class, and function requires a NumPy-style docstring with
 `Parameters`, `Returns`, and `Raises` sections where applicable.
 Private helpers require a one-line summary docstring at minimum.
 
-Example:
-
-```python
-def load(path: str | Path) -> Dataset:
-    """Load a BRSDK telemetry session from disk.
-
-    Parameters
-    ----------
-    path : str or Path
-        Path to the telemetry CSV file. The paired ``*_session.json``
-        sidecar is discovered automatically in the same directory.
-
-    Returns
-    -------
-    Dataset
-        A validated, immutable dataset object backed by a Polars DataFrame.
-
-    Raises
-    ------
-    FileNotFoundError
-        If ``path`` does not exist on disk.
-    MetadataValidationError
-        If the paired ``session.json`` fails Pydantic schema validation.
-    DatasetFormatError
-        If the CSV does not contain the required timestamp columns.
-    """
-```
-
 ---
 
 ## Testing Standards
@@ -183,25 +155,11 @@ This project follows
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`.
 
-Examples:
-
-```
-feat(io): add Parquet reader via polars.scan_parquet
-fix(metadata): reject negative log_hz values in SessionMetadata
-docs(api): add NumPy docstring to brsdk.load()
-test(metadata): add Hypothesis tests for VehicleMetadata
-```
-
-**Scope** refers to the module or layer affected
-(`io`, `metadata`, `core`, `accessors`, `ml`, `viz`, `ci`, `docs`).
-
 ---
 
 ## Pull Request Process
 
 1. Fork the repository and create a branch from `main`.
-   Branch name convention: `<type>/<short-description>`
-   (e.g., `feat/parquet-reader`, `fix/metadata-log-hz`).
 2. Make your changes.
 3. Verify the full quality gate passes locally:
    ```bash
@@ -212,8 +170,7 @@ test(metadata): add Hypothesis tests for VehicleMetadata
    ```
 4. Update `CHANGELOG.md` under the `[Unreleased]` section.
 5. Open a pull request against `main`. Fill in the PR template completely.
-6. CI must pass on all matrix targets (Ubuntu + Windows, Python 3.10–3.12)
-   before review will begin.
+6. CI must pass on all matrix targets before review will begin.
 7. At least one maintainer approval is required before merge.
 
 ---

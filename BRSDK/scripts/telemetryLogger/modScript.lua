@@ -1,13 +1,13 @@
 -- ============================================================================
 --  modScript.lua
 --
---  Auto-run entry point for the Telemetry Logger mod. BeamNG executes any
---  scripts/<modname>/modScript.lua found in an active mod automatically, so
---  this is what makes the whole thing "just work" the moment you enable the
---  mod -- no console commands needed.
+--  Initialization entry point for the BRSDK Game Engine extension.
+--  BeamNG automatically executes scripts/<modname>/modScript.lua when an
+--  active mod mounts, bootstrapping the GameEngine-side lifecycle without
+--  requiring manual console invocation.
 --
---  We load the GE-side extension and mark it "manual" unload so it survives
---  level/map changes instead of being torn down every time you load a map.
+--  The extension is configured with 'manual' unload mode to preserve state
+--  across level and map transitions.
 -- ============================================================================
 
 extensions.load('telemetryLoggerGE')

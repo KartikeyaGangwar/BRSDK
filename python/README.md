@@ -69,11 +69,9 @@ print(dataset.session.log_hz)  # 100
 df = dataset.dataframe
 print(df.schema)
 
-# Export to PyTorch (TODO: Planned for Phase 4)
-# tensors = dataset.ml.to_torch(device="cpu")
-
-# Plot vehicle path (TODO: Planned for Phase 5)
-# dataset.viz.plot_trajectory()
+# Perform columnar operations with native multithreaded performance
+fast_frames = df.filter(df["vel_x"].abs() > 5.0)
+print(f"High-velocity frames count: {len(fast_frames)}")
 ```
 
 ## Architecture

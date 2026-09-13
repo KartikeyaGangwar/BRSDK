@@ -12,8 +12,7 @@ Version numbers follow the form `MAJOR.MINOR.PATCH`:
 - `PATCH` — backwards-compatible bug fixes
 
 > **Note**: This changelog covers the Python SDK only. Changes to the Lua
-> telemetry scripts are tracked in the root-level
-> [CHANGELOG.md](../CHANGELOG.md).
+> telemetry scripts are tracked in the root-level CHANGELOG.
 
 ---
 

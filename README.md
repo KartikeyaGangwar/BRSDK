@@ -8,17 +8,17 @@
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
 
-BRSDK is a highly optimized, Near-zero dynamic allocations during telemetry collection framework designed for scientific research, machine learning, and autonomous driving simulation within **BeamNG.drive** and **BeamNG.tech**.
+BRSDK is a deterministic, near-zero-allocation telemetry framework designed for scientific research, reinforcement learning, and autonomous vehicle simulation within **BeamNG.drive** and **BeamNG.tech**.
 
-## Why BRSDK Exists
-Standard telemetry implementations often suffer from garbage collection (GC) spikes, non-deterministic physics stepping, and undocumented null values. BRSDK was built to solve these issues for researchers who require mathematically deterministic datasets for reinforcement learning and system identification.
+## Background and Motivation
+Standard telemetry implementations often suffer from garbage collection (GC) latency spikes, non-deterministic physics stepping, and undocumented null values. BRSDK addresses these limitations for researchers requiring mathematically reproducible datasets for reinforcement learning and system identification.
 
 ## Key Features
-- **Near - Zero Allocation Hot Path**: Extract thousands of rows per second with absolutely near-zero Lua garbage collector allocations, guaranteeing perfectly smooth and deterministic physics ticks.
+- **Near-Zero Allocation Hot Path**: Samples high-frequency signals with zero dynamic Lua heap allocations during logging, preserving deterministic simulation stepping without garbage collector pauses.
 - **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
 - **Dynamic Layout Engine**: Swap seamlessly between backward-compatible legacy CSV schemas and alphabetical research layouts.
 - **JSON Metadata Sidecars**: Every dataset includes a valid RFC 8259 `session.json` containing immutable vehicle physics constraints, map parameters, and game versions.
-- **Automated Verification**: Built-in test suite guarantees byte-for-byte identical output and determinism across module updates.
+- **Automated Verification**: Rigorous test suite enforcing strict schema validation, type integrity, and error boundaries.
 
 ## Architecture Overview
 BRSDK is built on a strict separation of concerns, operating primarily within the 2000Hz Vehicle Lua physics thread to guarantee simulation fidelity:
@@ -50,7 +50,7 @@ BRSDK natively supports both **BeamNG.drive** (consumer) and **BeamNG.tech** (re
 2. `modScript.lua` loads `lua/ge/extensions/telemetryLoggerGE.lua` into the GameEngine VM.
 3. `telemetryLoggerGE` observes when a vehicle spawns and uses `queueLuaCommand` to inject the high-frequency logger directly into the sandboxed Vehicle Lua VM.
 
-*Common Mistake: Do not place the `lua/` folder directly into the `0.32/` root. It must be packaged as a standard unpacked mod to utilize the `modScript.lua` bootstrap sequence.*
+*Note: The `lua/` directory must not be placed directly in the user folder root; it must reside within an unpacked mod directory to allow `modScript.lua` to initialize.*
 
 ## Quick Start
 1. Launch BeamNG and load any map and vehicle.
@@ -84,8 +84,8 @@ If you use BRSDK in your published research, please cite it using the provided `
   year    = {2026},
   version = {0.1.0},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
-  license = {Apache-2.0}
-  DOI: https://doi.org/10.5281/zenodo.21729606
+  license = {Apache-2.0},
+  doi     = {10.5281/zenodo.21729606}
 }
 ```
 The preferred citation is automatically available through GitHub's

@@ -118,7 +118,7 @@ all = [
 [project.urls]
 Homepage     = "https://github.com/KartikeyaGangwar/BRSDK"
 Repository   = "https://github.com/KartikeyaGangwar/BRSDK"
-Documentation = "https://beamng-research.github.io/brsdk"
+Documentation = "https://KartikeyaGangwar.github.io/BRSDK"
 "Bug Tracker" = "https://github.com/KartikeyaGangwar/BRSDK/issues"
 Changelog    = "https://github.com/KartikeyaGangwar/BRSDK/blob/main/python/CHANGELOG.md"
 
