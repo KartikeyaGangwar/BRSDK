@@ -9,17 +9,14 @@ datasets produced by the **BeamNG Research SDK (BRSDK)**.
 
 ## What is BRSDK?
 
-BRSDK records deterministic vehicle telemetry from
-[BeamNG.drive](https://www.beamng.com) at up to 2 000 Hz. Each recording
-consists of:
+BRSDK records high-frequency (up to 2 000 Hz) deterministic soft-body vehicle telemetry from [BeamNG.drive](https://www.beamng.com) to bridge the **Simulation-to-Real (Sim2Real)** gap in autonomous vehicle engineering and reinforcement learning. Each recording consists of:
 
-- A **telemetry CSV** containing timestamped signal columns (velocity,
-  wheel speeds, suspension travel, powertrain state, etc.)
+- A **telemetry CSV** containing timestamped signal columns (continuous velocities,
+  wheel speeds, suspension travel and compression velocity, tire slip energy, etc.)
 - A **session JSON sidecar** (`*_session.json`) containing validated metadata
-  (vehicle model, wheelbase, simulation clock, BRSDK version, etc.)
+  (vehicle model, wheelbase, mass distribution, simulation clock, BRSDK version, etc.)
 
-This Python SDK parses and validates these recordings to support structured
-numerical analysis.
+This Python SDK parses, validates, and structures these recordings for machine learning (PyTorch, Minari offline RL) and numerical analysis.
 
 ---
 

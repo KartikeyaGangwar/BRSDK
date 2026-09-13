@@ -15,13 +15,16 @@ repository-code: "https://github.com/KartikeyaGangwar/BRSDK"
 doi: "10.5281/zenodo.21729606"
 license: Apache-2.0
 abstract: >-
-  BRSDK is a deterministic, high-frequency telemetry framework 
-  designed for scientific research, machine learning, and autonomous 
-  driving simulation within BeamNG.drive and BeamNG.tech.
+  BRSDK is a deterministic, high-frequency telemetry framework and Python SDK
+  designed to bridge the Simulation-to-Real (Sim2Real) transfer gap in autonomous
+  vehicle engineering, reinforcement learning, and vehicle dynamics within
+  BeamNG.drive and BeamNG.tech.
 keywords:
   - BeamNG
+  - Sim2Real
   - Autonomous Driving
   - Reinforcement Learning
+  - Vehicle Dynamics
   - Telemetry
   - Simulation
 preferred-citation:

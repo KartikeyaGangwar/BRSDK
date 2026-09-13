@@ -8,17 +8,22 @@
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
 
-BRSDK is a deterministic, high-frequency telemetry framework designed for scientific research, reinforcement learning, and autonomous vehicle simulation within **BeamNG.drive** and **BeamNG.tech**.
+BRSDK is a deterministic, high-frequency telemetry framework and scientific Python SDK designed to bridge the **Simulation-to-Real (Sim2Real)** gap in autonomous driving, reinforcement learning, and vehicle dynamics research within **BeamNG.drive** and **BeamNG.tech**.
 
 ## Background and Motivation
-Standard telemetry implementations often experience garbage collection (GC) latency spikes, non-deterministic physics stepping, and undocumented null values. BRSDK addresses these limitations for researchers requiring reproducible datasets for reinforcement learning and system identification.
+A major challenge in autonomous vehicle control and reinforcement learning is the **Sim2Real reality gap**: neural controllers and state estimators trained on simulated telemetry often fail when deployed to physical hardware. Traditional simulators rely on rigid-body physics approximations or downsample telemetry to 20–50 Hz over network sockets, discarding sub-millisecond transient dynamics such as dynamic tire slip breakaway, suspension damper compression velocities, and chassis flex.
+
+BeamNG resolves vehicle components as 2,000 Hz soft-body spring-mass lattices, providing real-world physical fidelity. However, standard in-engine logging introduces garbage collection (GC) pauses and dropped frames that distort training trajectories. 
+
+**BRSDK solves this data acquisition bottleneck**: operating directly within the 2,000 Hz Vehicle Lua physics thread with zero dynamic memory allocations, BRSDK exports continuous ground-truth physical states alongside provenance metadata, enabling machine learning models to learn physical invariants that transfer reliably to real-world vehicles.
 
 ## Key Features
-- **Zero-Allocation In-Engine Logging**: Samples high-frequency signals with zero dynamic Lua heap allocations during collection, preserving deterministic simulation stepping without garbage collector pauses.
-- **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
+- **Sim2Real Physical Fidelity**: Captures 2,000 Hz soft-body dynamics (tire slip energy, suspension travel/velocities, wheel loads) to train controllers capable of transferring to physical platforms.
+- **Zero-Allocation In-Engine Logging**: Samples high-frequency signals with zero dynamic Lua heap allocations during collection, preserving deterministic physics stepping without garbage collector pauses.
+- **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, thermals, wheels, suspension, damage, and environment.
 - **Configurable Layout Engine**: Supports backward-compatible legacy CSV schemas and ordered research layouts.
 - **JSON Metadata Sidecars**: Every dataset includes an RFC 8259 `session.json` containing vehicle physics constraints, map parameters, and game versions.
-- **Verification Suite**: Automated test suite verifying schema validation, type integrity, and error boundaries.
+- **Python ML Integration**: Direct export to Apache Arrow columnar memory, Polars, and PyTorch (via DLPack) for offline reinforcement learning (Minari) and system identification.
 
 ## Architecture Overview
 BRSDK is built on a separation of concerns, operating primarily within the 2000Hz Vehicle Lua physics thread to preserve simulation fidelity:

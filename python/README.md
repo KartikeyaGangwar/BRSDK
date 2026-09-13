@@ -9,12 +9,11 @@ Official Python SDK for loading, inspecting, and analysing
 
 ## Overview
 
-BRSDK records deterministic vehicle telemetry from
-[BeamNG.drive](https://www.beamng.com) at up to 2 000 Hz. This Python
-library parses and structures those recordings for numerical analysis:
+BRSDK records high-frequency (up to 2 000 Hz) deterministic soft-body vehicle telemetry from [BeamNG.drive](https://www.beamng.com) to bridge the **Simulation-to-Real (Sim2Real)** transfer gap. This Python library parses, validates, and structures those recordings for machine learning, offline reinforcement learning, and numerical analysis:
 
-- **`brsdk.load()`** — dataset loading with schema and metadata validation
-- **Polars-native** — columnar computation backed by Apache Arrow
+- **`brsdk.load()`** — dataset loading with Pydantic V2 schema and sidecar validation
+- **Sim2Real Ready** — Apache Arrow and DLPack zero-copy tensor export for PyTorch and Minari (offline RL)
+- **Polars-Native** — vectorized columnar computation without memory copying
 - **Typed** — `mypy --strict` compliance with `py.typed` marker
 - **Extensible** — reader and exporter protocols supporting custom storage formats
 
