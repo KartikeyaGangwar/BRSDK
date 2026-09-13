@@ -1,6 +1,6 @@
 """BRSDK Python SDK.
 
-A production-quality Python interface for loading, inspecting, and analysing
+A Python interface for loading, inspecting, and analysing
 telemetry datasets produced by the BeamNG Research SDK (BRSDK).
 
 Notes

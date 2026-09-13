@@ -1,6 +1,6 @@
 # BRSDK Signal Reference
 
-This document provides an exhaustive, field-level breakdown of the BRSDK `v0.1.0` telemetry dataset schema, defaulting to the `legacy_csv` layout.
+This document provides a field-level specification of the BRSDK `v0.1.0` telemetry dataset schema, defaulting to the `legacy_csv` layout.
 
 BRSDK operates primarily as a read-only bridge to the 2000Hz Vehicle Lua physics engine. The exact list of signals exported depends on your layout engine profile, but the core engine behaviors and nullability rules apply universally.
 
@@ -10,7 +10,7 @@ BRSDK operates primarily as a read-only bridge to the 2000Hz Vehicle Lua physics
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | `frame_id` | `kinematics` | Internal `updateCallCount` | count | No | Dataset row index. Never blank. |
 | `graphics_frame` | `kinematics` | Internal `totalRowsWritten` | count | No | Engine frame counter. Never blank. |
-| `simulation_time` | `kinematics` | `obj:getSimTime()` | s | No | Simulation time perfectly synced to the physics tick. |
+| `simulation_time` | `kinematics` | `obj:getSimTime()` | s | No | Simulation time synchronized with the physics tick. |
 | `real_time` | `kinematics` | `os.clock()` | s | No | Wall clock time (host machine). |
 | `dt` | `kinematics` | Internal Delta | s | No | Time between the current and previous sample. |
 | `elapsed_since_last_log` | `kinematics` | Internal Accumulator | s | No | Time elapsed since the last CSV row was flushed. |
@@ -79,4 +79,4 @@ BRSDK operates primarily as a read-only bridge to the 2000Hz Vehicle Lua physics
 | `wheelX_suspension_velocity`| `suspension` | Computed | m/s | **Yes** | Computed via `(travel - prev_travel) / elapsed`. Because it mathematically relies on `suspension_travel`, it will be legitimately blank if `suspension_travel` is blank. |
 
 ---
-*Undocumented Engine Internals: BRSDK faithfully passes through any `nil` values directly from the BeamNG physics thread. We do not invent proxy data for vehicles missing complex node sensors.*
+*Engine Internals: BRSDK propagates `nil` values directly from the BeamNG physics thread without synthesizing proxy values for missing vehicle sensor nodes.*

@@ -8,24 +8,24 @@
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
 
-BRSDK is a deterministic, near-zero-allocation telemetry framework designed for scientific research, reinforcement learning, and autonomous vehicle simulation within **BeamNG.drive** and **BeamNG.tech**.
+BRSDK is a deterministic, high-frequency telemetry framework designed for scientific research, reinforcement learning, and autonomous vehicle simulation within **BeamNG.drive** and **BeamNG.tech**.
 
 ## Background and Motivation
-Standard telemetry implementations often suffer from garbage collection (GC) latency spikes, non-deterministic physics stepping, and undocumented null values. BRSDK addresses these limitations for researchers requiring mathematically reproducible datasets for reinforcement learning and system identification.
+Standard telemetry implementations often experience garbage collection (GC) latency spikes, non-deterministic physics stepping, and undocumented null values. BRSDK addresses these limitations for researchers requiring reproducible datasets for reinforcement learning and system identification.
 
 ## Key Features
-- **Near-Zero Allocation Hot Path**: Samples high-frequency signals with zero dynamic Lua heap allocations during logging, preserving deterministic simulation stepping without garbage collector pauses.
+- **Zero-Allocation In-Engine Logging**: Samples high-frequency signals with zero dynamic Lua heap allocations during collection, preserving deterministic simulation stepping without garbage collector pauses.
 - **Orthogonal Domain Modules**: Modular telemetry architecture covering kinematics, orientation, powertrain, wheels, suspension, damage, and environment.
-- **Dynamic Layout Engine**: Swap seamlessly between backward-compatible legacy CSV schemas and alphabetical research layouts.
-- **JSON Metadata Sidecars**: Every dataset includes a valid RFC 8259 `session.json` containing immutable vehicle physics constraints, map parameters, and game versions.
-- **Automated Verification**: Rigorous test suite enforcing strict schema validation, type integrity, and error boundaries.
+- **Configurable Layout Engine**: Supports backward-compatible legacy CSV schemas and ordered research layouts.
+- **JSON Metadata Sidecars**: Every dataset includes an RFC 8259 `session.json` containing vehicle physics constraints, map parameters, and game versions.
+- **Verification Suite**: Automated test suite verifying schema validation, type integrity, and error boundaries.
 
 ## Architecture Overview
-BRSDK is built on a strict separation of concerns, operating primarily within the 2000Hz Vehicle Lua physics thread to guarantee simulation fidelity:
+BRSDK is built on a separation of concerns, operating primarily within the 2000Hz Vehicle Lua physics thread to preserve simulation fidelity:
 - **Modules**: Perform high-frequency read-only queries against BeamNG APIs.
-- **Registry**: The single source of truth for all column metadata, units, and data types.
-- **Layout Engine**: Formats the dynamic module signals into an ordered array.
-- **Logger**: A pure IO orchestrator that flushes the binary/CSV buffers to disk safely via the Virtual File System (VFS).
+- **Registry**: The canonical registry for signal metadata, units, and data types.
+- **Layout Engine**: Formats dynamic module signals into an ordered array.
+- **Logger**: An I/O orchestrator that writes buffered records to disk via the Virtual File System (VFS).
 
 For full details, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
@@ -35,7 +35,7 @@ For full details, see [ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Installation
 
-BRSDK natively supports both **BeamNG.drive** (consumer) and **BeamNG.tech** (research/enterprise).
+BRSDK supports both **BeamNG.drive** (simulation) and **BeamNG.tech** (research platform).
 
 1. Download the latest `BRSDK_v0.1.0.zip` release.
 2. Extract the contents into your BeamNG user folder:
@@ -68,7 +68,7 @@ BRSDK natively supports both **BeamNG.drive** (consumer) and **BeamNG.tech** (re
 ![Session JSON Example](docs/images/session_json_example.png)
 
 ## Documentation
-For deep technical integrations, consult our documentation:
+Technical documentation and references:
 - [Python SDK (`brsdk`)](python/README.md)
 - [API Reference](docs/API_REFERENCE.md)
 - [Signal Reference](docs/SIGNAL_REFERENCE.md)
@@ -98,4 +98,4 @@ BRSDK is released under the **Apache License 2.0**. See the [LICENSE](LICENSE) f
 Please see [CONTRIBUTING.md](CONTRIBUTING.md) and our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on submitting pull requests and reporting issues.
 
 ## Acknowledgements
-Special thanks to the BeamNG developers and the open-source autonomous driving community for their ongoing support and feedback.
+The author acknowledges the BeamNG developers and research community for software support and feedback.

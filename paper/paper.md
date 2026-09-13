@@ -23,30 +23,30 @@ bibliography: paper.bib
 
 # Summary
 
-High-fidelity physics simulation is essential for modern robotics, autonomous vehicle engineering, and reinforcement learning. BeamNG.drive and its enterprise counterpart BeamNG.tech offer a soft-body dynamics physics engine that resolves vehicle components as spring-mass lattices at 2,000 Hz [@BeamNG:2020]. While this level of fidelity captures realistic tire contact patches, chassis deformation, and non-linear suspension dynamics, extracting this data at research frequencies has historically presented significant engineering hurdles. 
+High-fidelity physics simulation is essential for modern robotics, autonomous vehicle engineering, and reinforcement learning. BeamNG.drive and the research environment BeamNG.tech provide a soft-body dynamics physics engine that resolves vehicle components as spring-mass lattices at 2,000 Hz [@BeamNG:2020]. This fidelity enables modeling of tire contact patches, structural chassis compliance, and non-linear suspension dynamics; however, extracting state observations at research frequencies presents engineering challenges within the real-time simulation loop. 
 
-The BeamNG Research SDK (`BRSDK`) is an open-source, dual-runtime framework engineered to extract, serialize, validate, and analyze deterministic vehicle physics from BeamNG. It operates directly within the 2,000 Hz sandboxed Vehicle Lua Virtual Machine (VM) using a zero-dynamic-allocation hot-path architecture, preventing garbage-collection latency spikes from disrupting the simulation. Downstream, `BRSDK` couples each telemetry recording with an RFC 8259 JSON metadata sidecar and provides a modern, strictly typed Python SDK (`brsdk`) backed by Apache Arrow memory and the Polars query engine [@Arrow:2024; @Vink:2024].
+The BeamNG Research SDK (`BRSDK`) is an open-source, dual-runtime framework engineered to extract, serialize, validate, and analyze deterministic vehicle physics from BeamNG. It operates directly within the 2,000 Hz sandboxed Vehicle Lua Virtual Machine (VM) using pre-allocated memory buffers to eliminate dynamic memory allocations in the physics callback, preventing garbage collection latency spikes from degrading simulation determinism. Downstream, `BRSDK` pairs each telemetry recording with an RFC 8259 JSON metadata sidecar and provides a typed Python library (`brsdk`) backed by Apache Arrow columnar memory and the Polars query engine [@Arrow:2024; @Vink:2024].
 
 # Statement of need
 
-Scientific vehicle dynamics, system identification, and offline reinforcement learning algorithms rely on strictly deterministic, high-frequency physical state observations [@Towers:2023]. In BeamNG, vehicle-side code executes inside a Just-In-Time (JIT) compiled Lua VM [@Ierusalimschy:2007]. Conventional data logging approaches within Lua typically construct dynamic tables, strings, and closures inside each frame callback. In a 2,000 Hz physics loop, these operations rapidly accumulate garbage on the Lua memory heap, triggering periodic garbage collector pauses. These pauses cause non-deterministic frame stepping, missed samples, and sampling jitter, invalidating experimental reproducibility.
+Scientific vehicle dynamics, system identification, and offline reinforcement learning algorithms rely on deterministic, high-frequency physical state observations [@Towers:2023]. In BeamNG, vehicle-side code executes inside a Just-In-Time (JIT) compiled Lua VM [@Ierusalimschy:2007]. Conventional data logging approaches within Lua typically construct dynamic tables, strings, and closures inside each frame callback. In a 2,000 Hz physics loop, these operations accumulate uncollected allocations on the Lua heap, triggering periodic garbage collector pauses. These pauses introduce non-deterministic frame stepping, missed samples, and sampling jitter, compromising experimental reproducibility.
 
-Furthermore, existing tools lack unified provenance metadata. Telemetry files frequently omit structural vehicle parameters (such as vehicle curb mass, part configurations, center-of-gravity offsets, and wheel dimensions) necessary to interpret raw kinematic arrays. Post-processing has historically relied on ad-hoc scripts that parse unstructured comma-separated value (CSV) files with ambiguous data types and undocumented null values.
+Furthermore, existing tools lack unified provenance metadata. Telemetry files frequently omit structural vehicle parameters (such as curb mass, component configurations, center-of-gravity offsets, and wheel dimensions) necessary to interpret raw kinematic arrays. Post-processing has historically relied on ad-hoc scripts that parse unstructured comma-separated value (CSV) files with ambiguous data types and undocumented null values.
 
-`BRSDK` resolves these problems by providing:
+`BRSDK` addresses these challenges by providing:
 
-1. **Near-zero dynamic heap allocations** during real-time data collection in Lua, preserving sub-millisecond physics determinism.
-2. **Standardized metadata sidecars** (`session.json`) containing immutable vehicle configurations, environment parameters, and SDK provenance.
-3. **A high-performance Python analysis library** implementing strict Pydantic V2 schema validation and zero-copy Apache Arrow / Polars representations for direct ingestion into scientific workflows and machine learning frameworks.
+1. **Zero dynamic heap allocations** during real-time data extraction in Lua, preserving physics determinism and consistent sample timing.
+2. **Standardized metadata sidecars** (`session.json`) capturing vehicle configuration parameters, environment variables, and simulation provenance.
+3. **A typed Python scientific library** implementing Pydantic V2 schema validation and Apache Arrow / Polars columnar structures for integration with numerical workflows and machine learning frameworks.
 
 # State of the field
 
 Researchers utilizing physical simulators have traditionally chosen between high-level autonomous driving platforms and real-time rigid-body engines:
 
-- **CARLA** [@Dosovitskiy:2017] and **AirSim** [@Shah:2018] provide extensive sensor suites and urban environments, but rely primarily on simplified rigid-body vehicle dynamics (such as PhysX), which fail to model structural chassis twisting, tire thermal degradation, or component deformation under extreme limit handling.
-- **BeamNG-py** provides a Python interface for orchestrating scenarios and interacting with BeamNG.tech via TCP network sockets. However, transferring telemetry over inter-process network sockets introduces latency and bandwidth bottlenecks that limit extraction frequencies to lower rates (typically 10–50 Hz), preventing researchers from observing transient high-frequency phenomena such as wheel hop, ABS pressure modulation, or suspension shudder.
+- **CARLA** [@Dosovitskiy:2017] and **AirSim** [@Shah:2018] provide extensive sensor suites and urban environments, but rely primarily on simplified rigid-body vehicle dynamics (such as PhysX), which do not model structural chassis compliance, tire thermal degradation, or component deformation under handling limits.
+- **BeamNG-py** provides a Python interface for orchestrating scenarios and interacting with BeamNG.tech via TCP network sockets. However, transferring telemetry over inter-process network sockets introduces latency and bandwidth constraints that limit extraction frequencies to lower rates (typically 10–50 Hz), which limits the observation of transient high-frequency dynamics such as wheel hop, ABS pressure modulation, and suspension resonances.
 
-`BRSDK` was developed rather than contributing directly to client-server frameworks because high-fidelity telemetry extraction must be co-located inside the vehicle's native physics thread. `BRSDK` acts as a specialized data-acquisition pipeline that complements existing scenario managers: it captures state natively inside the Vehicle VM at high frequencies and writes directly to the virtual filesystem, bypassing network overhead completely.
+`BRSDK` addresses high-frequency telemetry extraction by operating directly within the vehicle simulation thread. Rather than replacing client-server scenario orchestrators, `BRSDK` functions as an in-engine instrumentation layer: it extracts state natively within the Vehicle VM at 2,000 Hz and writes buffered records directly to the local filesystem, avoiding socket transmission overhead.
 
 # Software design
 
@@ -58,8 +58,8 @@ In BeamNG, execution is isolated across two distinct virtual machines: the Game 
 
 1. **Bootstrap Phase**: A Game Engine extension (`telemetryLoggerGE.lua`) boots during mod mounting, monitors vehicle spawning, and injects the vehicle extension (`telemetryLogger.lua`) into the Vehicle VM via `queueLuaCommand`.
 2. **Decoupled Modular Architecture**: Signal extraction is partitioned into isolated domain modules (`kinematics`, `orientation`, `driverInputs`, `powertrain`, `thermals`, `suspension`, `wheels`, `damage`, and `environment`). Each module pre-allocates static state buffers during initialization.
-3. **Signal Registry and Layout Engine**: Modules register metadata (signal name, unit, physical type, category) with a central `Registry`. The `Layout Engine` orders these signals into pre-compiled closure arrays for `O(1)` row evaluation during `updateGFX`.
-4. **Zero-Allocation Guarantee**: String concatenations and dynamic table instantiations (`{}`) are eliminated on the hot path. Values are formatted directly into pre-allocated memory buffers flushed periodically to disk, preventing garbage collection invocation.
+3. **Signal Registry and Layout Engine**: Modules register metadata (signal name, unit, physical type, category) with a central `Registry`. The `Layout Engine` orders these signals into pre-compiled closure arrays for $O(1)$ row evaluation during `updateGFX`.
+4. **Pre-Allocated Buffer Serialization**: Dynamic string concatenations and table instantiations (`{}`) are eliminated in the collection callback. Values are formatted directly into pre-allocated memory buffers flushed periodically to disk, avoiding garbage collection pauses.
 
 As illustrated in \autoref{fig:architecture}, signal collection is decoupled across the real-time simulation thread and the analytical Python environment.
 
@@ -69,15 +69,15 @@ As illustrated in \autoref{fig:architecture}, signal collection is decoupled acr
 
 The Python SDK (`python/src/brsdk`) reads, validates, and models the exported telemetry datasets:
 
-- **Immutability & Zero-Copy Computation**: Built in accordance with RFC-0001, the `Dataset` class serves as a lightweight container binding a `polars.DataFrame` to a validated `SessionMetadata` model. Polars utilizes Apache Arrow columnar memory under the hood, enabling multi-threaded queries and zero-copy data exchange with NumPy [@Harris:2020] and PyTorch tensors via DLPack.
-- **Strict Metadata Boundary**: Sidecar JSON files are parsed through Pydantic V2 models (`SessionMetadata`, `SimulationMetadata`, `VehicleMetadata`, `SDKMetadata`) [@Pydantic:2024]. Fields inaccessible from the sandboxed Vehicle Lua VM (such as map identifiers or global engine versions) are handled through explicit sentinels (`"unavailable_from_vehicle_lua"`), ensuring robust validation without rejecting genuine empirical runs.
+- **Immutability & Columnar Representation**: Built in accordance with RFC-0001, the `Dataset` class serves as a container binding a `polars.DataFrame` to a validated `SessionMetadata` model. Polars utilizes Apache Arrow columnar memory internally, enabling multi-threaded queries and zero-copy data exchange with NumPy [@Harris:2020] and PyTorch tensors via DLPack.
+- **Metadata Validation and Schemas**: Sidecar JSON files are parsed through Pydantic V2 models (`SessionMetadata`, `SimulationMetadata`, `VehicleMetadata`, `SDKMetadata`) [@Pydantic:2024]. Fields inaccessible from the sandboxed Vehicle Lua VM (such as map identifiers or global engine versions) are handled through explicit sentinels (`"unavailable_from_vehicle_lua"`), ensuring schema validation without rejecting valid experimental sessions.
 
 # Research impact statement
 
-`BRSDK` provides reproducible data infrastructure for research in vehicle dynamics, tire friction estimation, and autonomous control. Key capabilities demonstrated include:
+`BRSDK` provides reproducible data infrastructure for research in vehicle dynamics, tire friction estimation, and autonomous control. Demonstrated capabilities include:
 
-- **Empirical Validation**: Successfully tested on extensive real-world BeamNG simulation runs (exceeding 490,000 rows across 86 continuous signals per run) with zero memory leaks and consistent sub-millisecond recording intervals.
-- **System Identification**: Enables extraction of suspension compression velocities and dynamic tire slip energy profiles that are inaccessible through standard game interfaces, facilitating physical parameter estimation.
+- **Empirical Validation**: Evaluated across continuous BeamNG simulation sessions exceeding 490,000 samples across 86 continuous physical signals per session without memory growth and with consistent sub-millisecond recording intervals.
+- **System Identification**: Enables extraction of suspension compression velocities and dynamic tire slip energy profiles that are inaccessible through default simulation telemetry interfaces, facilitating physical parameter estimation.
 - **Reproducible Data Sharing**: By pairing raw signal arrays with immutable `session.json` sidecars capturing vehicle geometry, mass properties, and simulator builds, datasets generated via `BRSDK` meet Open Science standards for archival and benchmark publishing.
 
 # AI usage disclosure

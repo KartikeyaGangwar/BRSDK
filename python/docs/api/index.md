@@ -34,7 +34,7 @@ dataset = brsdk.load("path/to/telemetry_17801_20260801_135818.csv")
 
 ### `brsdk.Dataset`
 
-The top-level container binding the high-performance Polars telemetry DataFrame with validated Pydantic session metadata.
+The top-level container binding the Polars telemetry DataFrame with validated Pydantic session metadata.
 
 #### Properties:
 - `dataframe` (*polars.DataFrame*): The tabular telemetry data with Arrow-backed memory.

@@ -9,14 +9,14 @@ Official Python SDK for loading, inspecting, and analysing
 
 ## Overview
 
-BRSDK records zero-allocation, deterministic vehicle telemetry from
+BRSDK records deterministic vehicle telemetry from
 [BeamNG.drive](https://www.beamng.com) at up to 2 000 Hz. This Python
-library turns those recordings into first-class scientific objects:
+library parses and structures those recordings for numerical analysis:
 
-- **`brsdk.load()`** — one-call dataset loading with strict metadata validation
-- **Polars-native** — columnar computation without copying data
-- **Typed** — full `mypy --strict` compliance; ships `py.typed`
-- **Extensible** — reader and exporter protocols allow third-party backends
+- **`brsdk.load()`** — dataset loading with schema and metadata validation
+- **Polars-native** — columnar computation backed by Apache Arrow
+- **Typed** — `mypy --strict` compliance with `py.typed` marker
+- **Extensible** — reader and exporter protocols supporting custom storage formats
 
 ## Requirements
 
@@ -76,7 +76,7 @@ print(f"High-velocity frames count: {len(fast_frames)}")
 
 ## Architecture
 
-The SDK is a thin facade over two industry-standard libraries:
+The SDK coordinates I/O, schema validation, and columnar data structures:
 
 ```
 brsdk.load()

@@ -9,17 +9,17 @@ datasets produced by the **BeamNG Research SDK (BRSDK)**.
 
 ## What is BRSDK?
 
-BRSDK records zero-allocation, deterministic vehicle telemetry from
+BRSDK records deterministic vehicle telemetry from
 [BeamNG.drive](https://www.beamng.com) at up to 2 000 Hz. Each recording
 consists of:
 
 - A **telemetry CSV** containing timestamped signal columns (velocity,
-  wheel speeds, suspension travel, powertrain state, …)
+  wheel speeds, suspension travel, powertrain state, etc.)
 - A **session JSON sidecar** (`*_session.json`) containing validated metadata
-  (vehicle model, wheelbase, simulation clock, BRSDK version, …)
+  (vehicle model, wheelbase, simulation clock, BRSDK version, etc.)
 
-This Python SDK turns those recordings into first-class scientific objects so
-that researchers can load, validate, and analyse data in a single line of code.
+This Python SDK parses and validates these recordings to support structured
+numerical analysis.
 
 ---
 
@@ -49,7 +49,7 @@ print(dataset.session.log_hz)         # 100
 df = dataset.dataframe
 print(df.schema)
 
-# Perform columnar operations with native multithreaded performance
+# Perform columnar operations using Polars expressions
 fast_frames = df.filter(df["vel_x"].abs() > 5.0)
 print(f"High-velocity frames count: {len(fast_frames)}")
 ```
@@ -100,7 +100,7 @@ Key decisions:
 |----------|--------|--------|
 | Compute engine | Polars | Arrow-backed; lazy evaluation; no GIL contention |
 | Memory format | Apache Arrow | Zero-copy bridge to PyTorch via DLPack |
-| Metadata validation | Pydantic V2 | Rust-backed; 5–50× faster than V1; strict mode |
+| Metadata validation | Pydantic V2 | Compiled validation core; strict mode parsing |
 | ML export | DLPack | Framework-agnostic zero-copy tensor interchange |
 | Offline RL | Minari | Modern standard; successor to D4RL |
 
@@ -126,7 +126,7 @@ Apache License, Version 2.0 — see
 ```bibtex
 @software{brsdk2026,
   title   = {{BRSDK}: {BeamNG} Research SDK},
-  author  = {{BRSDK Team}},
+  author  = {Singh, Kartikey and {BRSDK Contributors}},
   year    = {2026},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
 }

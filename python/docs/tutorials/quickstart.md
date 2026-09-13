@@ -56,7 +56,7 @@ else:
 
 ## 4. Querying Signals with Polars
 
-Because `dataset.dataframe` is an Apache Arrow-backed Polars DataFrame, operations run with native multithreaded performance:
+Because `dataset.dataframe` is an Apache Arrow-backed Polars DataFrame, operations execute through Polars' vectorized query engine:
 
 ```python
 import polars as pl
