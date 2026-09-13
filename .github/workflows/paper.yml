@@ -9,13 +9,9 @@ name: Draft Paper
 
 on:
   push:
-    paths:
-      - "paper/**"
-      - ".github/workflows/paper.yml"
+    branches: ["main"]
   pull_request:
-    paths:
-      - "paper/**"
-      - ".github/workflows/paper.yml"
+    branches: ["main"]
   workflow_dispatch:
 
 concurrency:

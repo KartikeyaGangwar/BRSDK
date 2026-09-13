@@ -34,6 +34,7 @@ Scientific vehicle dynamics, system identification, and offline reinforcement le
 Furthermore, existing tools lack unified provenance metadata. Telemetry files frequently omit structural vehicle parameters (such as vehicle curb mass, part configurations, center-of-gravity offsets, and wheel dimensions) necessary to interpret raw kinematic arrays. Post-processing has historically relied on ad-hoc scripts that parse unstructured comma-separated value (CSV) files with ambiguous data types and undocumented null values.
 
 `BRSDK` resolves these problems by providing:
+
 1. **Near-zero dynamic heap allocations** during real-time data collection in Lua, preserving sub-millisecond physics determinism.
 2. **Standardized metadata sidecars** (`session.json`) containing immutable vehicle configurations, environment parameters, and SDK provenance.
 3. **A high-performance Python analysis library** implementing strict Pydantic V2 schema validation and zero-copy Apache Arrow / Polars representations for direct ingestion into scientific workflows and machine learning frameworks.
