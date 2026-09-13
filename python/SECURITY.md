@@ -58,7 +58,7 @@ Please disclose privately using one of these channels:
 1. **GitHub Private Security Advisory** (preferred):
    Navigate to the repository → Security → Advisories → New draft advisory.
 
-2. **Email**: Send a detailed report to the maintainers. Include in your report:
+2. **Email**: Send a detailed report to `kartikeysingh525@protonmail.com`. Include in your report:
    - A description of the vulnerability and its potential impact
    - Steps to reproduce (minimal reproducible example if possible)
    - The version of `brsdk` you tested against

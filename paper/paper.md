@@ -12,9 +12,10 @@ tags:
 authors:
   - name: Kartikey Singh
     orcid: 0009-0009-1973-7532
+    corresponding: true
     affiliation: 1
 affiliations:
-  - name: Independent Researcher, India
+  - name: Department of Mathematics, University of Delhi, India
     index: 1
 date: 13 September 2026
 bibliography: paper.bib
@@ -59,39 +60,9 @@ In BeamNG, execution is isolated across two distinct virtual machines: the Game 
 3. **Signal Registry and Layout Engine**: Modules register metadata (signal name, unit, physical type, category) with a central `Registry`. The `Layout Engine` orders these signals into pre-compiled closure arrays for `O(1)` row evaluation during `updateGFX`.
 4. **Zero-Allocation Guarantee**: String concatenations and dynamic table instantiations (`{}`) are eliminated on the hot path. Values are formatted directly into pre-allocated memory buffers flushed periodically to disk, preventing garbage collection invocation.
 
-```
-+-------------------------------------------------------------------+
-|                     Vehicle Lua VM (2000 Hz)                     |
-|                                                                   |
-| [Kinematics] [Orientation] [Powertrain] [Wheels] [Suspension] ... |
-|       │             │            │         │          │           |
-|       └─────────────┴────────────┼─────────┴──────────┘           |
-|                                  ▼                                |
-|                        [Signal Registry]                          |
-|                                  │                                |
-|                                  ▼                                |
-|                         [Layout Engine]                           |
-|                                  │                                |
-|                                  ▼                                |
-|             [Zero-Allocation Orchestrator: collectRow]            |
-|                                  │                                |
-|                                  ▼                                |
-+----------------------------------┼────────────────────────────────+
-                                   ▼
-                   +───────────────────────────────+
-                   |     Disk / Output Storage     |
-                   |  - telemetry_[id]_[ts].csv     |
-                   |  - telemetry_[id]_[ts].json    |
-                   +───────────────┬───────────────+
-                                   ▼
-+-------------------------------------------------------------------+
-|                        Python SDK (brsdk)                         |
-|                                                                   |
-|  brsdk.load()                                                     |
-|       ├── Pydantic V2 Validation ──► SessionMetadata              |
-|       └── Polars Lazy CSV Scan   ──► Arrow-Backed Dataset.df      |
-+-------------------------------------------------------------------+
-```
+As illustrated in \autoref{fig:architecture}, signal collection is decoupled across the real-time simulation thread and the analytical Python environment.
+
+![BRSDK dual-runtime architecture and high-frequency telemetry data flow.\label{fig:architecture}](architecture.svg){ width=95% }
 
 ## Python Scientific SDK (`brsdk`)
 
