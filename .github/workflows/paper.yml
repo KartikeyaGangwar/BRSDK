@@ -1,0 +1,38 @@
+# =============================================================================
+# .github/workflows/paper.yml — JOSS Draft Paper Compilation
+#
+# Uses the official Open Journals action to compile paper.pdf from paper/paper.md
+# whenever changes are pushed to paper/ or .github/workflows/paper.yml.
+# The resulting paper.pdf is uploaded as a workflow artifact for easy download.
+# =============================================================================
+
+name: Draft Paper
+
+on:
+  push:
+    paths:
+      - "paper/**"
+      - ".github/workflows/paper.yml"
+  pull_request:
+    paths:
+      - "paper/**"
+      - ".github/workflows/paper.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  paper:
+    name: Build JOSS Paper PDF
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build draft paper
+        uses: openjournals/openjournals-action@v1
+        with:
+          paper_path: paper/paper.md
