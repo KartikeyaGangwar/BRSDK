@@ -3,7 +3,6 @@
 #
 # Uses the official Open Journals action to compile paper.pdf from paper/paper.md
 # whenever changes are pushed to paper/ or .github/workflows/paper.yml.
-# The resulting paper.pdf is uploaded as a workflow artifact for easy download.
 # =============================================================================
 
 name: Draft Paper
@@ -25,14 +24,21 @@ concurrency:
 
 jobs:
   paper:
-    name: Build JOSS Paper PDF
+    name: Generate JOSS Paper PDF
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build draft paper
-        uses: openjournals/openjournals-action@v1
+      - name: Build draft PDF
+        uses: openjournals/openjournals-draft-action@master
         with:
-          paper_path: paper/paper.md
+          journal: joss
+          paper-path: paper/paper.md
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: joss-paper-pdf
+          path: paper/paper.pdf
