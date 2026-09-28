@@ -123,7 +123,7 @@ Apache License, Version 2.0 — see
 ```bibtex
 @software{brsdk2026,
   title   = {{BRSDK}: {BeamNG} Research SDK},
-  author  = {Singh, Kartikey and {BRSDK Contributors}},
+  author  = {Gangwar, Kartikeya and {BRSDK Contributors}},
   year    = {2026},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
 }

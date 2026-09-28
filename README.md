@@ -83,8 +83,8 @@ Technical documentation and references:
 ## Citation
 If you use BRSDK in your published research, please cite it using the provided `CITATION.cff` file, or via the following BibTeX:
 ```bibtex
-@software{singh2026brsdk,
-  author  = {Kartikey Singh},
+@software{gangwar2026brsdk,
+  author  = {Kartikeya Gangwar},
   title   = {BeamNG Research SDK (BRSDK)},
   year    = {2026},
   version = {2.0.0},

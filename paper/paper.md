@@ -12,7 +12,7 @@ tags:
   - telemetry
   - robotics
 authors:
-  - name: Kartikey Singh
+  - name: Kartikeya Gangwar
     orcid: 0009-0009-1973-7532
     corresponding: true
     affiliation: 1

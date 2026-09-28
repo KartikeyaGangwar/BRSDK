@@ -33,10 +33,10 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 
 authors = [
-    { name = "Kartikey Singh", email = "kartikeysingh525@protonmail.com" },
+    { name = "Kartikeya Gangwar", email = "kartikeysingh525@protonmail.com" },
 ]
 maintainers = [
-    { name = "Kartikey Singh", email = "kartikeysingh525@protonmail.com" },
+    { name = "Kartikeya Gangwar", email = "kartikeysingh525@protonmail.com" },
 ]
 
 # Trove classifiers used by PyPI for search and filtering.

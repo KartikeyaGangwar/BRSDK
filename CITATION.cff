@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use BRSDK in your research, please cite it as below."
 authors:
-  - family-names: "Singh"
-    given-names: "Kartikey"
+  - family-names: "Gangwar"
+    given-names: "Kartikeya"
     orcid: "https://orcid.org/0009-0009-1973-7532"
     affiliation: "Department of Mathematics, University of Delhi, India"
     email: "kartikeysingh525@protonmail.com"
@@ -31,8 +31,8 @@ preferred-citation:
   type: software
   title: "BeamNG Research SDK (BRSDK)"
   authors:
-    - family-names: "Singh"
-      given-names: "Kartikey"
+    - family-names: "Gangwar"
+      given-names: "Kartikeya"
       orcid: "https://orcid.org/0009-0009-1973-7532"
       affiliation: "Department of Mathematics, University of Delhi, India"
       email: "kartikeysingh525@protonmail.com"
