@@ -22,6 +22,15 @@ _No unreleased changes._
 
 ---
 
+## [2.0.1] — 2026-09-30
+
+### Changed
+
+- **Metadata & Authorship Alignment**: Formally synchronized author identity to `Kartikeya Gangwar` with ORCID ([`0009-0009-1973-7532`](https://orcid.org/0009-0009-1973-7532)) across `CITATION.cff`, `paper.md`, `pyproject.toml`, Zenodo metadata sidecars, and package distribution artifacts.
+- **Zenodo Automation**: Integrated `.zenodo.json` repository specification for native Zenodo GitHub release integration.
+
+---
+
 ## [2.0.0] — 2026-09-13
 
 ### Added
@@ -50,5 +59,6 @@ _No unreleased changes._
 
 ---
 
-[Unreleased]: https://github.com/KartikeyaGangwar/BRSDK/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/KartikeyaGangwar/BRSDK/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/KartikeyaGangwar/BRSDK/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/KartikeyaGangwar/BRSDK/releases/tag/v2.0.0

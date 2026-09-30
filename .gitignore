@@ -13,6 +13,7 @@ Thumbs.db
 *.csv
 *.json
 !session.json
+!.zenodo.json
 
 # Lua specific
 luac.out

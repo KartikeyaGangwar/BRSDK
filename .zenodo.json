@@ -1,0 +1,28 @@
+{
+  "title": "BeamNG Research SDK (BRSDK): High-Frequency In-Engine Telemetry Framework and Scientific Python SDK for Sim2Real Autonomous Vehicle Research",
+  "description": "<p><strong>BRSDK (BeamNG Research SDK)</strong> is an open-source, dual-runtime computational framework engineered to bridge the Simulation-to-Real (Sim2Real) reality gap in autonomous driving, vehicle dynamics, and reinforcement learning within BeamNG.drive and BeamNG.tech.</p>\n<h3>Core Capabilities</h3>\n<ul>\n<li><strong>2,000 Hz Soft-Body In-Engine Telemetry:</strong> Operates directly inside the sandboxed Vehicle Lua Virtual Machine with zero dynamic heap allocations on the hot path, capturing continuous ground-truth physical states (sub-millisecond transient dynamics, tire slip breakaway energy, suspension travel &amp; damper velocities, wheel loads, and chassis compliance).</li>\n<li><strong>RFC 8259 Provenance Metadata Sidecars:</strong> Emits deterministic per-run metadata sidecars recording engine clocks, physics steps, vehicle config hashes, and run manifests.</li>\n<li><strong>Scientific Python SDK (<code>brsdk</code>):</strong> Backed by Apache Arrow columnar memory and Polars query acceleration, featuring strict Pydantic V2 schema validation and zero-copy DLPack interchange with PyTorch and Minari (offline reinforcement learning).</li>\n</ul>\n<h3>Release v2.0.1 Highlights</h3>\n<ul>\n<li>Author metadata formally synchronized to <strong>Kartikeya Gangwar</strong> (<a href=\"https://orcid.org/0009-0009-1973-7532\">ORCID: 0009-0009-1973-7532</a>).</li>\n<li>Automated Zenodo metadata integration sidecar (<code>.zenodo.json</code>).</li>\n<li>Package distribution metadata and citation compliance updates.</li>\n</ul>",
+  "creators": [
+    {
+      "name": "Gangwar, Kartikeya",
+      "affiliation": "Department of Mathematics, University of Delhi, India",
+      "orcid": "0009-0009-1973-7532"
+    }
+  ],
+  "keywords": [
+    "BeamNG",
+    "Sim2Real",
+    "Autonomous Driving",
+    "Reinforcement Learning",
+    "Vehicle Dynamics",
+    "Telemetry",
+    "Physics Simulation",
+    "Apache Arrow",
+    "PyTorch",
+    "Offline RL",
+    "Lua",
+    "Python SDK"
+  ],
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "access_right": "open"
+}

@@ -1,9 +1,11 @@
 # brsdk-python
 
-> **Status**: Production Release (v2.0.0) — Scientific Python SDK.
+> **Status**: Production Release (v2.0.1) — Scientific Python SDK.
 
 Official Python SDK for loading, inspecting, and analysing
 [BRSDK](https://github.com/KartikeyaGangwar/BRSDK) telemetry datasets.
+
+**Author & Maintainer:** [Kartikeya Gangwar](https://github.com/KartikeyaGangwar) ([ORCID: 0009-0009-1973-7532](https://orcid.org/0009-0009-1973-7532))
 
 ---
 
@@ -128,6 +130,6 @@ If you use BRSDK in academic work, please cite:
   author  = {Gangwar, Kartikeya and {BRSDK Contributors}},
   year    = {2026},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
-  version = {2.0.0},
+  version = {2.0.1},
 }
 ```

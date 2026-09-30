@@ -3,10 +3,13 @@
 ![BRSDK Banner](assets/banner.svg)
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)]()
+[![Version](https://img.shields.io/badge/version-2.0.1-green.svg)]()
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0009--1973--7532-green.svg)](https://orcid.org/0009-0009-1973-7532)
 [![BeamNG](https://img.shields.io/badge/BeamNG.drive-v0.32+-orange.svg)]()
 [![BeamNG Tech](https://img.shields.io/badge/BeamNG.tech-v0.32+-orange.svg)]()
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21729606.svg)](https://doi.org/10.5281/zenodo.21729606)
+
+**Author & Maintainer:** [Kartikeya Gangwar](https://github.com/KartikeyaGangwar) ([ORCID: 0009-0009-1973-7532](https://orcid.org/0009-0009-1973-7532))
 
 BRSDK is a deterministic, high-frequency telemetry framework and scientific Python SDK designed to bridge the **Simulation-to-Real (Sim2Real)** gap in autonomous driving, reinforcement learning, and vehicle dynamics research within **BeamNG.drive** and **BeamNG.tech**.
 
@@ -87,7 +90,7 @@ If you use BRSDK in your published research, please cite it using the provided `
   author  = {Kartikeya Gangwar},
   title   = {BeamNG Research SDK (BRSDK)},
   year    = {2026},
-  version = {2.0.0},
+  version = {2.0.1},
   url     = {https://github.com/KartikeyaGangwar/BRSDK},
   license = {Apache-2.0},
   doi     = {10.5281/zenodo.21729606}
